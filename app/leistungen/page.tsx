@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
   FileText,
@@ -89,6 +89,14 @@ const services = [
 ];
 
 export default function LeistungenPage() {
+  return (
+    <Suspense fallback={null}>
+      <LeistungenContent />
+    </Suspense>
+  );
+}
+
+function LeistungenContent() {
   const searchParams = useSearchParams();
   const [active, setActive] = useState(0);
 
