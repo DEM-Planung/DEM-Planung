@@ -4,6 +4,52 @@ import { useState } from "react";
 
 type Person = "furkan" | "mehmet";
 
+const furkanData = {
+  name: "Furkan Demirci",
+  timeline: [
+    ["2020 – 2025", "Studium Bachelor of Arts Architektur an der Hochschule Kaiserslautern"],
+    ["01/2026 – 09/2026", "Selbstständig als freiberuflicher Bachelor of Arts"],
+    ["Seit 09/2026", "Geschäftsführer DEM-Planung GmbH"],
+  ],
+  kompetenzen: [
+    "Entwurf und Entwicklung moderner Wohn- und Quartierskonzepte",
+    "Fotorealistische Architekturvisualisierung für Vermarktung und Planung",
+    "Digitale Bestandsaufnahme und präzise Gebäudeerfassung",
+    "Flächenberechnungen und Kostenermittlungen nach aktuellen Normen",
+    "Optimierung von Grundrissen unter funktionalen und wirtschaftlichen Aspekten",
+    "Professionelle Projektaufbereitung für Bauherren, Investoren und Behörden",
+  ],
+  tools: ["Vectorworks", "ArchiCAD", "Twinmotion", "Lumion", "Enscape", "Photoshop", "InDesign"],
+  email: "f.demirci@dem-planung.de",
+  phone: "+49 176 724 611 07",
+};
+
+const mehmetData = {
+  name: "Mehmet Ali Demirci",
+  timeline: [
+    ["2016 – 2020", "Studium Bauingenieurwesen an der HTW des Saarlandes"],
+    ["02/2020 – 01/2021", "Angestellt bei Planungsbüro Bohnert"],
+    ["02/2021 – 03/2025", "Geschäftsführer bei den KD-Ingenieuren"],
+    ["03/2025 – 09/2026", "Geschäftsführer bei der DMA-Planung"],
+    ["Seit 09/2026", "Geschäftsführer bei der DEM-Planung GmbH"],
+  ],
+  kompetenzen: [
+    "Tragwerksplanung und statische Berechnungen im Hochbau",
+    "Erstellung prüffähiger Statiknachweise",
+    "Genehmigungsplanung und Bauantragsunterlagen",
+    "Entwurfs- und Ausführungsgrundrisse",
+    "Kostenberechnung und wirtschaftliche Projektbewertung",
+    "Fachbauleitung, Vor-Ort-Betreuung und statische Abnahmen",
+  ],
+  qualifikationen: [
+    "Eingetragen in der Ingenieurkammer des Saarlandes",
+    "Bauvorlagenberechtigt",
+    "Bachelor of Engineering – Bauingenieurwesen",
+  ],
+  email: "ma.demirci@dem-planung.de",
+  phone: "+49 176 637 814 72",
+};
+
 export default function UeberUnsPage() {
   const [activePerson, setActivePerson] = useState<Person>("furkan");
 
@@ -75,81 +121,44 @@ export default function UeberUnsPage() {
             </h2>
           </div>
 
-          <div className="mb-10 grid gap-6 md:mb-12 md:grid-cols-2 md:gap-8">
-            <TeamCard
-              active={activePerson === "furkan"}
-              onClick={() => setActivePerson("furkan")}
-              image="/furkan.jpg"
-              name="Furkan Demirci"
-              role="Architektur · Visualisierung · Bestandsaufnahme"
-            />
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <TeamCard
+                active={activePerson === "furkan"}
+                onClick={() => setActivePerson("furkan")}
+                image="/furkan.jpg"
+                name="Furkan Demirci"
+                role="Architektur · Visualisierung · Bestandsaufnahme"
+              />
 
-            <TeamCard
-              active={activePerson === "mehmet"}
-              onClick={() => setActivePerson("mehmet")}
-              image="/mehmet.png"
-              name="Mehmet Ali Demirci"
-              role="Tragwerksplanung · Statik · Baukosten"
-            />
+              {activePerson === "furkan" && (
+                <div className="mt-8 md:hidden">
+                  <DetailBox {...furkanData} />
+                </div>
+              )}
+            </div>
+
+            <div>
+              <TeamCard
+                active={activePerson === "mehmet"}
+                onClick={() => setActivePerson("mehmet")}
+                image="/mehmet.png"
+                name="Mehmet Ali Demirci"
+                role="Tragwerksplanung · Statik · Baukosten"
+              />
+
+              {activePerson === "mehmet" && (
+                <div className="mt-8 md:hidden">
+                  <DetailBox {...mehmetData} />
+                </div>
+              )}
+            </div>
           </div>
 
-          {activePerson === "furkan" && (
-            <DetailBox
-              name="Furkan Demirci"
-              timeline={[
-                ["2020 – 2025", "Studium Bachelor of Arts Architektur an der Hochschule Kaiserslautern"],
-                ["01/2026 – 09/2026", "Selbstständig als freiberuflicher Bachelor of Arts"],
-                ["Seit 09/2026", "Geschäftsführer DEM-Planung GmbH"],
-              ]}
-              kompetenzen={[
-                "Entwurf und Entwicklung moderner Wohn- und Quartierskonzepte",
-                "Fotorealistische Architekturvisualisierung für Vermarktung und Planung",
-                "Digitale Bestandsaufnahme und präzise Gebäudeerfassung",
-                "Flächenberechnungen und Kostenermittlungen nach aktuellen Normen",
-                "Optimierung von Grundrissen unter funktionalen und wirtschaftlichen Aspekten",
-                "Professionelle Projektaufbereitung für Bauherren, Investoren und Behörden",
-              ]}
-              tools={[
-                "Vectorworks",
-                "ArchiCAD",
-                "Twinmotion",
-                "Lumion",
-                "Enscape",
-                "Photoshop",
-                "InDesign",
-              ]}
-              email="f.demirci@dem-planung.de"
-              phone="+49 176 724 611 07"
-            />
-          )}
-
-          {activePerson === "mehmet" && (
-            <DetailBox
-              name="Mehmet Ali Demirci"
-              timeline={[
-                ["2016 – 2020", "Studium Bauingenieurwesen an der HTW des Saarlandes"],
-                ["02/2020 – 01/2021", "Angestellt bei Planungsbüro Bohnert"],
-                ["02/2021 – 03/2025", "Geschäftsführer bei den KD-Ingenieuren"],
-                ["03/2025 – 09/2026", "Geschäftsführer bei der DMA-Planung"],
-                ["Seit 09/2026", "Geschäftsführer bei der DEM-Planung GmbH"],
-              ]}
-              kompetenzen={[
-                "Tragwerksplanung und statische Berechnungen im Hochbau",
-                "Erstellung prüffähiger Statiknachweise",
-                "Genehmigungsplanung und Bauantragsunterlagen",
-                "Entwurfs- und Ausführungsgrundrisse",
-                "Kostenberechnung und wirtschaftliche Projektbewertung",
-                "Fachbauleitung, Vor-Ort-Betreuung und statische Abnahmen",
-              ]}
-              qualifikationen={[
-                "Eingetragen in der Ingenieurkammer des Saarlandes",
-                "Bauvorlagenberechtigt",
-                "Bachelor of Engineering – Bauingenieurwesen",
-              ]}
-              email="ma.demirci@dem-planung.de"
-              phone="+49 176 637 814 72"
-            />
-          )}
+          <div className="mt-12 hidden md:block">
+            {activePerson === "furkan" && <DetailBox {...furkanData} />}
+            {activePerson === "mehmet" && <DetailBox {...mehmetData} />}
+          </div>
         </div>
       </section>
     </main>
@@ -172,7 +181,7 @@ function TeamCard({
   return (
     <button
       onClick={onClick}
-      className={`relative overflow-hidden rounded-2xl text-left transition-all duration-300 md:rounded-3xl ${
+      className={`relative w-full overflow-hidden rounded-2xl text-left transition-all duration-300 md:rounded-3xl ${
         active
           ? "scale-[1.01] shadow-2xl ring-4 ring-[#061a33] md:ring-8"
           : "shadow-xl hover:scale-[1.01] hover:shadow-2xl"
