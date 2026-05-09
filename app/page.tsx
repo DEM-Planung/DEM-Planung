@@ -8,9 +8,6 @@ import {
   ScanLine,
   Calculator,
   Box,
-  MapPin,
-  Phone,
-  Mail,
 } from "lucide-react";
 
 const services = [
@@ -32,7 +29,7 @@ const services = [
     title: "Bestandsaufnahme",
     text: "Digitale und analoge Erfassung für sichere Grundlagen.",
     icon: ScanLine,
-    image: "/bestandsaufnahme.png"
+    image: "/bestandsaufnahme.png",
   },
   {
     title: "Flächen & Kosten",
@@ -60,7 +57,6 @@ const projects = [
     title: "BIZZLIVING Baumholder",
     subtitle: "Bestandssanierung",
     image: "/projekte/baumholder/aussenanlage-1.png",
-    
   },
   {
     title: "Bad Soden-Salmünster",
@@ -69,32 +65,24 @@ const projects = [
   },
 ];
 
-function Header() {
-  return (
-    <header className="bg-white border-b border-slate-200">
-      
-    </header>
-  );
-}
-
 function Hero() {
   return (
-    <section className="relative min-h-[600px] overflow-hidden">
+    <section className="relative min-h-[520px] md:min-h-[680px] overflow-hidden">
       <img
         src="/hero.png"
-        alt="DEM - Planung Projekt"
-        className="absolute inset-0 h-full w-full object-cover object-[center_50%]"
+        alt="DEM Planung Projekt"
+        className="absolute inset-0 h-full w-full object-cover object-center md:object-[center_56%]"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-white via-white/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white via-white/80 to-white/20 md:bg-gradient-to-r md:from-white md:via-white/85 md:to-transparent" />
 
-      <div className="relative mx-auto max-w-7xl px-6 min-h-[600px] flex items-center">
+      <div className="relative mx-auto flex min-h-[520px] max-w-7xl items-center px-5 md:min-h-[680px] md:px-6">
         <div className="max-w-xl">
-          <p className="text-sm tracking-[0.35em] uppercase text-[#061a33] mb-6">
+          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-[#061a33] md:mb-6 md:text-sm">
             DEM Planung
           </p>
 
-          <h1 className="text-6xl font-black leading-[1.05] text-[#061a33]">
+          <h1 className="text-4xl font-black leading-[1.05] text-[#061a33] sm:text-5xl md:text-6xl">
             PLANUNG.
             <br />
             STATIK.
@@ -102,18 +90,9 @@ function Hero() {
             VISUALISIERUNG.
           </h1>
 
-          <p className="mt-8 text-lg leading-8 text-[#061a33]">
-            Alles aus einer Hand.
-            <br />
-            Effizient. Präzise. Persönlich.
+          <p className="mt-5 max-w-md text-sm leading-6 text-slate-700 md:mt-7 md:text-base">
+            Architektur, Planung, Statik und Visualisierung aus einer Hand.
           </p>
-
-          <Link
-            href="/kontakt"
-            className="mt-8 inline-flex items-center gap-4 bg-[#061a33] text-white px-7 py-4 rounded-md"
-          >
-            Projekt anfragen <ArrowRight size={18} />
-          </Link>
         </div>
       </div>
     </section>
@@ -122,8 +101,8 @@ function Hero() {
 
 function Services() {
   return (
-    <section className="bg-white py-14">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="bg-white py-10 md:py-16">
+      <div className="mx-auto max-w-6xl px-5 md:px-6">
         {services.map((service) => {
           const Icon = service.icon;
 
@@ -131,25 +110,25 @@ function Services() {
             <Link
               href="/leistungen"
               key={service.title}
-              className="grid grid-cols-[80px_1fr_1.2fr_260px_40px] items-center gap-8 border-b border-slate-200 py-5 group"
+              className="group grid grid-cols-[48px_1fr] items-start gap-4 border-b border-slate-200 py-6 md:grid-cols-[80px_1fr_1.2fr_260px_40px] md:items-center md:gap-8 md:py-5"
             >
-              <Icon className="w-9 h-9 text-[#061a33]" />
+              <Icon className="h-8 w-8 text-[#061a33] md:h-9 md:w-9" />
 
-              <h2 className="text-xl font-black text-[#061a33]">
+              <h2 className="text-lg font-black text-[#061a33] md:text-xl">
                 {service.title}
               </h2>
 
-              <p className="text-sm leading-6 text-slate-600">
+              <p className="col-span-2 text-sm leading-6 text-slate-600 md:col-span-1">
                 {service.text}
               </p>
 
               <img
                 src={service.image}
                 alt={service.title}
-                className="h-24 w-full object-cover opacity-80 group-hover:opacity-100 transition"
+                className="col-span-2 h-44 w-full rounded-md object-cover opacity-90 transition group-hover:opacity-100 md:col-span-1 md:h-24 md:rounded-none md:opacity-80"
               />
 
-              <ArrowRight className="text-[#061a33] group-hover:translate-x-1 transition" />
+              <ArrowRight className="hidden text-[#061a33] transition group-hover:translate-x-1 md:block" />
             </Link>
           );
         })}
@@ -160,36 +139,34 @@ function Services() {
 
 function Projects() {
   return (
-    <section className="bg-white py-20">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="text-center mb-12">
-          <p className="text-sm tracking-[0.35em] uppercase text-slate-500 mb-4">
+    <section className="bg-white py-12 md:py-20">
+      <div className="mx-auto max-w-6xl px-5 md:px-6">
+        <div className="mb-10 text-center md:mb-12">
+          <p className="mb-4 text-xs uppercase tracking-[0.35em] text-slate-500 md:text-sm">
             Projekte
           </p>
 
-          <h2 className="text-4xl font-black text-[#061a33]">
+          <h2 className="text-3xl font-black leading-tight text-[#061a33] md:text-4xl">
             Auszug unserer Projekte
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-7">
+        <div className="grid grid-cols-1 gap-9 md:grid-cols-3 md:gap-7">
           {projects.map((project) => (
             <Link href="/projekte" key={project.title} className="group">
               <div className="overflow-hidden rounded-md">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-56 w-full object-cover group-hover:scale-105 transition duration-500"
+                  className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 md:h-56"
                 />
               </div>
 
-              <h3 className="mt-5 text-lg font-black text-[#061a33]">
+              <h3 className="mt-4 text-lg font-black text-[#061a33] md:mt-5">
                 {project.title}
               </h3>
 
-              <p className="text-sm text-slate-600 mt-1">
-                {project.subtitle}
-              </p>
+              <p className="mt-1 text-sm text-slate-600">{project.subtitle}</p>
             </Link>
           ))}
         </div>
@@ -197,7 +174,7 @@ function Projects() {
         <div className="mt-12 flex justify-center">
           <Link
             href="/projekte"
-            className="border border-[#061a33] px-8 py-4 flex items-center gap-4 text-[#061a33] font-medium hover:bg-[#061a33] hover:text-white transition"
+            className="flex w-full max-w-xs items-center justify-center gap-4 border border-[#061a33] px-6 py-4 text-sm font-medium text-[#061a33] transition hover:bg-[#061a33] hover:text-white md:w-auto md:max-w-none md:px-8"
           >
             Alle Projekte ansehen <ArrowRight size={18} />
           </Link>
@@ -207,26 +184,12 @@ function Projects() {
   );
 }
 
-function Footer() {
-  return (
-    <footer className="bg-white border-t border-slate-200 py-12">
-      <div className="mx-auto max-w-6xl px-6 grid md:grid-cols-3 gap-10">
-        
-      </div>
-
-
-    </footer>
-  );
-}
-
 export default function HomePage() {
   return (
-    <main className="bg-white">
-      <Header />
+    <main className="overflow-x-hidden bg-white">
       <Hero />
       <Services />
       <Projects />
-      <Footer />
     </main>
   );
 }
