@@ -67,7 +67,7 @@ const projects = [
 
 function Hero() {
   return (
-    <section className="relative min-h-[520px] md:min-h-[680px] overflow-hidden">
+    <section className="relative min-h-[520px] overflow-hidden md:min-h-[680px]">
       <img
         src="/hero.png"
         alt="DEM Planung Projekt"
@@ -82,7 +82,7 @@ function Hero() {
             DEM Planung
           </p>
 
-          <h1 className="text-4xl font-black leading-[1.05] text-[#061a33] sm:text-5xl md:text-6xl">
+          <h1 className="text-3xl font-black leading-[1.05] text-[#061a33] sm:text-4xl md:text-6xl">
             PLANUNG.
             <br />
             STATIK.
@@ -90,7 +90,7 @@ function Hero() {
             VISUALISIERUNG.
           </h1>
 
-          <p className="mt-5 max-w-md text-sm leading-6 text-slate-700 md:mt-7 md:text-base">
+          <p className="mt-5 max-w-md text-xs leading-6 text-slate-700 sm:text-sm md:mt-7 md:text-base">
             Architektur, Planung, Statik und Visualisierung aus einer Hand.
           </p>
         </div>
@@ -114,11 +114,11 @@ function Services() {
             >
               <Icon className="h-8 w-8 text-[#061a33] md:h-9 md:w-9" />
 
-              <h2 className="text-lg font-black text-[#061a33] md:text-xl">
+              <h2 className="text-base sm:text-lg font-black text-[#061a33] md:text-xl">
                 {service.title}
               </h2>
 
-              <p className="col-span-2 text-sm leading-6 text-slate-600 md:col-span-1">
+              <p className="col-span-2 text-xs sm:text-sm leading-6 text-slate-600 md:col-span-1">
                 {service.text}
               </p>
 
@@ -146,7 +146,7 @@ function Projects() {
             Projekte
           </p>
 
-          <h2 className="text-3xl font-black leading-tight text-[#061a33] md:text-4xl">
+          <h2 className="text-2xl sm:text-3xl font-black leading-tight text-[#061a33] md:text-4xl">
             Auszug unserer Projekte
           </h2>
         </div>
