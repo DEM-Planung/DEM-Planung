@@ -54,20 +54,18 @@ const projects = [
   {
     title: "Rathausplatz Völklingen",
     subtitle: "Quartiersentwicklung",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1000&auto=format&fit=crop",
+    image: "/projekte/rathausplatz/frontansicht.png",
   },
   {
     title: "BIZZLIVING Baumholder",
     subtitle: "Bestandssanierung",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1000&auto=format&fit=crop",
+    image: "/projekte/baumholder/aussenanlage-1.png",
+    
   },
   {
     title: "Bad Soden-Salmünster",
     subtitle: "Quartiersentwicklung",
-    image:
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1000&auto=format&fit=crop",
+    image: "/projekte/bad-soden/anlage.png",
   },
 ];
 
