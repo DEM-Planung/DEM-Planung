@@ -76,7 +76,7 @@ export default function RootLayout({
           <div className="absolute inset-0 bg-black/45" />
 
           <div className="relative z-10 w-full px-5 py-12 md:px-6 md:py-16">
-            <div className="grid gap-10 text-center md:grid-cols-3 md:gap-16 md:items-center">
+            <div className="grid gap-10 text-center md:grid-cols-3 md:items-center md:gap-16">
               <div className="flex flex-col items-center">
                 <p className="text-xl font-semibold text-white md:text-2xl">
                   DEM-Planung GmbH
@@ -87,6 +87,7 @@ export default function RootLayout({
                 </p>
 
                 <Footer />
+              </div>
 
               <div>
                 <h3 className="mb-4 text-xl font-semibold md:mb-6 md:text-2xl">
@@ -112,14 +113,14 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            </div>
 
             <div className="mt-12 border-t border-white/20 pt-6 text-center text-xs text-white/60 md:mt-16 md:pt-8 md:text-sm">
               © 2026 DEM-Planung GmbH
             </div>
           </div>
         </footer>
-      <CookieBanner />
+
+        <CookieBanner />
       </body>
     </html>
   );
