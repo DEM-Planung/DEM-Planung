@@ -112,6 +112,7 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
+            </div>
 
             <div className="mt-12 border-t border-white/20 pt-6 text-center text-xs text-white/60 md:mt-16 md:pt-8 md:text-sm">
               © 2026 DEM-Planung GmbH
