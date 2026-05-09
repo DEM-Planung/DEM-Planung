@@ -1,5 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
+import MobileMenu from "./MobileMenu";
 
 export const metadata = {
   title: "DEM Planung",
@@ -50,6 +51,8 @@ export default function RootLayout({
                 Projekt anfragen
               </Link>
             </nav>
+
+            <MobileMenu />
           </div>
         </header>
 
