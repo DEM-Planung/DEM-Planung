@@ -146,7 +146,7 @@ export default function KontaktPage() {
 
             <button
               type="submit"
-              className="mt-7 ml-auto flex items-center gap-4 bg-[#061a33] text-white px-8 py-4 rounded-md"
+              className="mt-7 ml-auto flex items-center gap-4 bg-[#061a33] text-white px-8 py-4 rounded-md hover:bg-[#0b2a52] transition cursor-pointer"
             >
               Nachricht senden <ArrowRight className="w-5 h-5" />
             </button>
