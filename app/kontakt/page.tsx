@@ -90,11 +90,27 @@ export default function KontaktPage() {
           </div>
 
           <form
-            action="mailto:info@dem-planung.de"
+            action="https://formsubmit.co/info@dem-planung.de"
             method="POST"
-            encType="text/plain"
             className="mt-8 rounded-2xl border border-slate-200 p-8 shadow-sm"
           >
+            <input
+            type="hidden"
+            name="_subject"
+            value="Neue Projektanfrage über die Website"
+          />
+
+            <input
+             type="hidden"
+             name="_captcha"
+             value="false"
+          />
+
+            <input
+            type="hidden"
+            name="_template"
+            value="table"
+          />
             <div className="grid md:grid-cols-2 gap-5">
               <input
                 name="name"
