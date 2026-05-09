@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   FileText,
   Building2,
@@ -88,91 +89,97 @@ const services = [
 ];
 
 export default function LeistungenPage() {
+  const searchParams = useSearchParams();
   const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const tab = searchParams.get("tab");
+
+    if (tab === "planung") setActive(0);
+    if (tab === "statik") setActive(1);
+    if (tab === "bestand") setActive(2);
+    if (tab === "flaechen") setActive(3);
+    if (tab === "renderings") setActive(4);
+  }, [searchParams]);
+
   const current = services[active];
   const CurrentIcon = current.icon;
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-[#061a33]">
       {/* TABS */}
-<section className="border-b border-slate-100 bg-white">
-  <div className="mx-auto max-w-7xl px-5 py-4 md:px-6 md:py-6">
-    <div className="flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-5 md:gap-4 md:overflow-visible md:pb-0">
-      {services.map((service, index) => {
-        const Icon = service.icon;
+      <section className="border-b border-slate-100 bg-white">
+        <div className="mx-auto max-w-7xl px-5 py-4 md:px-6 md:py-6">
+          <div className="flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-5 md:gap-4 md:overflow-visible md:pb-0">
+            {services.map((service, index) => {
+              const Icon = service.icon;
 
-        return (
-          <button
-            key={service.title}
-            onClick={() => setActive(index)}
-            className={`flex min-w-[150px] items-center justify-center gap-2 rounded-full border px-4 py-3 text-xs font-semibold transition md:min-w-0 md:rounded-2xl md:py-5 md:text-sm ${
-              active === index
-                ? "border-[#061a33] bg-[#061a33] text-white shadow-md"
-                : "border-slate-200 bg-white text-[#061a33] hover:border-[#061a33]/40"
-            }`}
-          >
-            <Icon
-              className={`h-4 w-4 md:h-6 md:w-6 ${
-                active === index ? "text-white" : "text-[#061a33]"
-              }`}
-            />
+              return (
+                <button
+                  key={service.title}
+                  onClick={() => setActive(index)}
+                  className={`flex min-w-[150px] items-center justify-center gap-2 rounded-full border px-4 py-3 text-xs font-semibold transition md:min-w-0 md:rounded-2xl md:py-5 md:text-sm ${
+                    active === index
+                      ? "border-[#061a33] bg-[#061a33] text-white shadow-md"
+                      : "border-slate-200 bg-white text-[#061a33] hover:border-[#061a33]/40"
+                  }`}
+                >
+                  <Icon
+                    className={`h-4 w-4 md:h-6 md:w-6 ${
+                      active === index ? "text-white" : "text-[#061a33]"
+                    }`}
+                  />
 
-            <span className="whitespace-nowrap md:hidden">
-              {service.title}
-            </span>
+                  <span className="whitespace-nowrap md:hidden">
+                    {service.title}
+                  </span>
 
-            <span className="hidden leading-tight md:block">
-              {service.title}
-            </span>
-          </button>
-        );
-      })}
-    </div>
-  </div>
-</section>
+                  <span className="hidden leading-tight md:block">
+                    {service.title}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </section>
 
       {/* CONTENT */}
       <section className="mx-auto grid max-w-7xl grid-cols-1 overflow-hidden lg:grid-cols-[0.8fr_1.4fr]">
-        {/* TEXT */}
         <div className="px-5 py-10 md:px-6 md:py-14 lg:py-20 lg:pr-16">
-          <div>
-            <h1 className="text-3xl font-black tracking-tight md:text-5xl">
-              {current.title}
-            </h1>
+          <h1 className="text-3xl font-black tracking-tight md:text-5xl">
+            {current.title}
+          </h1>
 
-            <h2 className="mt-4 text-lg font-black uppercase md:mt-5 md:text-2xl">
-              {current.subtitle}
-            </h2>
+          <h2 className="mt-4 text-lg font-black uppercase md:mt-5 md:text-2xl">
+            {current.subtitle}
+          </h2>
 
-            <p className="mt-6 text-sm leading-7 text-slate-700 md:mt-8 md:text-lg md:leading-8">
-              {current.text}
-            </p>
-          </div>
+          <p className="mt-6 text-sm leading-7 text-slate-700 md:mt-8 md:text-lg md:leading-8">
+            {current.text}
+          </p>
 
-          <div>
-            <div className="mt-8 h-px w-12 bg-[#061a33] md:mt-10" />
+          <div className="mt-8 h-px w-12 bg-[#061a33] md:mt-10" />
 
-            <h3 className="mt-6 text-lg font-black md:mt-8 md:text-xl">
-              Unsere Leistungen
-            </h3>
+          <h3 className="mt-6 text-lg font-black md:mt-8 md:text-xl">
+            Unsere Leistungen
+          </h3>
 
-            <div className="mt-5 space-y-3 md:mt-6 md:space-y-4">
-              {current.items.map((item) => (
-                <div
-                  key={item}
-                  className="flex items-start gap-3 border-b border-slate-100 pb-3 md:items-center md:gap-4"
-                >
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#061a33] md:mt-0 md:h-5 md:w-5" />
-                  <span className="text-sm font-medium text-slate-800 md:text-base">
-                    {item}
-                  </span>
-                </div>
-              ))}
-            </div>
+          <div className="mt-5 space-y-3 md:mt-6 md:space-y-4">
+            {current.items.map((item) => (
+              <div
+                key={item}
+                className="flex items-start gap-3 border-b border-slate-100 pb-3 md:items-center md:gap-4"
+              >
+                <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#061a33] md:mt-0 md:h-5 md:w-5" />
+                <span className="text-sm font-medium text-slate-800 md:text-base">
+                  {item}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
 
-        {/* IMAGE */}
         <div className="relative h-[280px] md:h-[420px] lg:h-auto lg:min-h-[760px]">
           <img
             src={current.image}
