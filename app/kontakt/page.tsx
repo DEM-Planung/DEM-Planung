@@ -1,26 +1,17 @@
 import Link from "next/link";
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Clock,
-  CalendarDays,
-  ArrowRight,
-} from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 
 export default function KontaktPage() {
   return (
     <main className="min-h-screen bg-white text-[#061a33]">
-    
       <section className="mx-auto max-w-7xl px-6 py-12 grid lg:grid-cols-[0.7fr_1.5fr] gap-14">
         <div>
           <Link href="/" className="hover:text-[#061a33] transition">
-  Startseite
-</Link>
+            Startseite
+          </Link>
 
-<span className="mx-2">›</span>
-
-<span>Kontakt</span>
+          <span className="mx-2">›</span>
+          <span>Kontakt</span>
 
           <p className="mt-12 text-slate-500 font-medium">
             Wir sind für Sie da
@@ -32,7 +23,7 @@ export default function KontaktPage() {
             Sie uns
           </h1>
 
-          <div className="mt-8 h-px w- bg-[#061a33]" />
+          <div className="mt-8 h-px w-16 bg-[#061a33]" />
 
           <p className="mt-8 text-lg leading-8 text-slate-700">
             Sie haben Fragen zu unseren Leistungen oder möchten ein Projekt mit
@@ -79,65 +70,66 @@ export default function KontaktPage() {
               </div>
             </div>
           </div>
-
-          <div className="mt-12 rounded-2xl bg-slate-50 p-8 border border-slate-100">
-            
-          </div>
         </div>
 
         <div>
-          
-<div className="mb-10">
-  <p className="text-sm uppercase tracking-[0.3em] text-slate-500 mb-3">
-    Kontakt
-  </p>
+          <div className="mb-10">
+            <p className="text-sm uppercase tracking-[0.3em] text-slate-500 mb-3">
+              Kontakt
+            </p>
 
-  <h2 className="text-4xl font-black text-[#061a33] leading-tight">
-    Ihr Projekt beginnt mit einem Gespräch.
-  </h2>
+            <h2 className="text-4xl font-black text-[#061a33] leading-tight">
+              Ihr Projekt beginnt mit einem Gespräch.
+            </h2>
 
-  <p className="mt-5 text-lg leading-8 text-slate-600">
-    Wir freuen uns darauf,
-    <br />
-    Ihr Bauvorhaben kennenzulernen.
-  </p>
-<div className="grid md:grid-cols-2 gap-5">
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Wir freuen uns darauf,
+              <br />
+              Ihr Bauvorhaben kennenzulernen.
+            </p>
+          </div>
 
-  <input
-    name="name"
-    placeholder="Ihr Name"
-    className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
-  />
+          <form
+            action="mailto:info@dem-planung.de"
+            method="POST"
+            encType="text/plain"
+            className="mt-8 rounded-2xl border border-slate-200 p-8 shadow-sm"
+          >
+            <div className="grid md:grid-cols-2 gap-5">
+              <input
+                name="name"
+                placeholder="Ihr Name"
+                className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+              />
 
-  <input
-    name="email"
-    placeholder="Ihre E-Mail"
-    className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
-  />
+              <input
+                name="email"
+                placeholder="Ihre E-Mail"
+                className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+              />
+            </div>
 
-</div>
+            <input
+              name="betreff"
+              placeholder="Betreff"
+              className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+            />
 
-<input
-  name="betreff"
-  placeholder="Betreff"
-  className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
-/>
-
-<textarea
-  name="nachricht"
-  placeholder="Ihre Nachricht"
-  rows={8}
-  className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
-/>
+            <textarea
+              name="nachricht"
+              placeholder="Ihre Nachricht"
+              rows={8}
+              className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+            />
 
             <label className="mt-5 flex items-center gap-3 text-sm text-slate-600">
-              <input type="checkbox" className="w-5 h-5" />
+              <input type="checkbox" required className="w-5 h-5" />
               Ich stimme der Verarbeitung meiner Daten gemäß der
               Datenschutzerklärung zu.
             </label>
 
             <button
-              type="button"
+              type="submit"
               className="mt-7 ml-auto flex items-center gap-4 bg-[#061a33] text-white px-8 py-4 rounded-md"
             >
               Nachricht senden <ArrowRight className="w-5 h-5" />
