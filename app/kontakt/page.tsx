@@ -3,39 +3,41 @@ import { MapPin, Phone, Mail, Clock, ArrowRight } from "lucide-react";
 
 export default function KontaktPage() {
   return (
-    <main className="min-h-screen bg-white text-[#061a33]">
-      <section className="mx-auto max-w-7xl px-6 py-12 grid lg:grid-cols-[0.7fr_1.5fr] gap-14">
+    <main className="min-h-screen overflow-x-hidden bg-white text-[#061a33]">
+      <section className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-5 py-10 md:px-6 md:py-12 lg:grid-cols-[0.7fr_1.5fr] lg:gap-14">
         <div>
-          <Link href="/" className="hover:text-[#061a33] transition">
-            Startseite
-          </Link>
+          <div className="text-xs text-slate-500 md:text-sm">
+            <Link href="/" className="transition hover:text-[#061a33]">
+              Startseite
+            </Link>
 
-          <span className="mx-2">›</span>
-          <span>Kontakt</span>
+            <span className="mx-2">›</span>
+            <span>Kontakt</span>
+          </div>
 
-          <p className="mt-12 text-slate-500 font-medium">
+          <p className="mt-8 text-sm font-medium text-slate-500 md:mt-12 md:text-base">
             Wir sind für Sie da
           </p>
 
-          <h1 className="mt-5 text-5xl font-black leading-tight">
+          <h1 className="mt-4 text-3xl font-black leading-tight md:mt-5 md:text-5xl">
             Kontaktieren
             <br />
             Sie uns
           </h1>
 
-          <div className="mt-8 h-px w-16 bg-[#061a33]" />
+          <div className="mt-6 h-px w-14 bg-[#061a33] md:mt-8 md:w-16" />
 
-          <p className="mt-8 text-lg leading-8 text-slate-700">
+          <p className="mt-6 text-sm leading-7 text-slate-700 md:mt-8 md:text-lg md:leading-8">
             Sie haben Fragen zu unseren Leistungen oder möchten ein Projekt mit
             uns besprechen? Wir freuen uns auf Ihre Nachricht oder Ihren Anruf.
           </p>
 
-          <div className="mt-12 space-y-8">
-            <div className="flex gap-5">
-              <MapPin className="w-8 h-8" />
+          <div className="mt-9 space-y-6 md:mt-12 md:space-y-8">
+            <div className="flex gap-4 md:gap-5">
+              <MapPin className="h-6 w-6 shrink-0 md:h-8 md:w-8" />
               <div>
-                <p className="font-black">Adresse</p>
-                <p className="text-slate-600">
+                <p className="text-sm font-black md:text-base">Adresse</p>
+                <p className="text-sm text-slate-600 md:text-base">
                   Kanalstraße 2a
                   <br />
                   66849 Landstuhl
@@ -43,28 +45,36 @@ export default function KontaktPage() {
               </div>
             </div>
 
-            <div className="flex gap-5">
-              <Phone className="w-8 h-8" />
+            <div className="flex gap-4 md:gap-5">
+              <Phone className="h-6 w-6 shrink-0 md:h-8 md:w-8" />
               <div>
-                <p className="font-black">Telefon</p>
-                <p className="text-slate-600">+49 176 724 611 07</p>
-                <p className="text-slate-600">+49 176 637 814 72</p>
+                <p className="text-sm font-black md:text-base">Telefon</p>
+                <p className="text-sm text-slate-600 md:text-base">
+                  +49 176 724 611 07
+                </p>
+                <p className="text-sm text-slate-600 md:text-base">
+                  +49 176 637 814 72
+                </p>
               </div>
             </div>
 
-            <div className="flex gap-5">
-              <Mail className="w-8 h-8" />
+            <div className="flex gap-4 md:gap-5">
+              <Mail className="h-6 w-6 shrink-0 md:h-8 md:w-8" />
               <div>
-                <p className="font-black">E-Mail</p>
-                <p className="text-slate-600">info@dem-planung.de</p>
+                <p className="text-sm font-black md:text-base">E-Mail</p>
+                <p className="break-all text-sm text-slate-600 md:text-base">
+                  info@dem-planung.de
+                </p>
               </div>
             </div>
 
-            <div className="flex gap-5">
-              <Clock className="w-8 h-8" />
+            <div className="flex gap-4 md:gap-5">
+              <Clock className="h-6 w-6 shrink-0 md:h-8 md:w-8" />
               <div>
-                <p className="font-black">Öffnungszeiten</p>
-                <p className="text-slate-600">
+                <p className="text-sm font-black md:text-base">
+                  Öffnungszeiten
+                </p>
+                <p className="text-sm text-slate-600 md:text-base">
                   Montag – Freitag: 8:00 – 17:00 Uhr
                 </p>
               </div>
@@ -73,16 +83,16 @@ export default function KontaktPage() {
         </div>
 
         <div>
-          <div className="mb-10">
-            <p className="text-sm uppercase tracking-[0.3em] text-slate-500 mb-3">
+          <div className="mb-8 md:mb-10">
+            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-500 md:text-sm">
               Kontakt
             </p>
 
-            <h2 className="text-4xl font-black text-[#061a33] leading-tight">
+            <h2 className="text-2xl font-black leading-tight text-[#061a33] md:text-4xl">
               Ihr Projekt beginnt mit einem Gespräch.
             </h2>
 
-            <p className="mt-5 text-lg leading-8 text-slate-600">
+            <p className="mt-4 text-sm leading-7 text-slate-600 md:mt-5 md:text-lg md:leading-8">
               Wir freuen uns darauf,
               <br />
               Ihr Bauvorhaben kennenzulernen.
@@ -92,63 +102,58 @@ export default function KontaktPage() {
           <form
             action="https://formsubmit.co/info@dem-planung.de"
             method="POST"
-            className="mt-8 rounded-2xl border border-slate-200 p-8 shadow-sm"
+            className="mt-6 rounded-2xl border border-slate-200 p-5 shadow-sm md:mt-8 md:p-8"
           >
             <input
-            type="hidden"
-            name="_subject"
-            value="Neue Projektanfrage über die Website"
-          />
+              type="hidden"
+              name="_subject"
+              value="Neue Projektanfrage über die Website"
+            />
 
-            <input
-             type="hidden"
-             name="_captcha"
-             value="false"
-          />
+            <input type="hidden" name="_captcha" value="false" />
 
-            <input
-            type="hidden"
-            name="_template"
-            value="table"
-          />
-            <div className="grid md:grid-cols-2 gap-5">
+            <input type="hidden" name="_template" value="table" />
+
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
               <input
                 name="name"
                 placeholder="Ihr Name"
-                className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+                className="w-full rounded-md border border-slate-200 px-4 py-3 text-sm outline-none focus:border-[#061a33] md:px-5 md:py-4 md:text-base"
               />
 
               <input
                 name="email"
                 placeholder="Ihre E-Mail"
-                className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+                className="w-full rounded-md border border-slate-200 px-4 py-3 text-sm outline-none focus:border-[#061a33] md:px-5 md:py-4 md:text-base"
               />
             </div>
 
             <input
               name="betreff"
               placeholder="Betreff"
-              className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+              className="mt-4 w-full rounded-md border border-slate-200 px-4 py-3 text-sm outline-none focus:border-[#061a33] md:mt-5 md:px-5 md:py-4 md:text-base"
             />
 
             <textarea
               name="nachricht"
               placeholder="Ihre Nachricht"
-              rows={8}
-              className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+              rows={6}
+              className="mt-4 w-full rounded-md border border-slate-200 px-4 py-3 text-sm outline-none focus:border-[#061a33] md:mt-5 md:px-5 md:py-4 md:text-base"
             />
 
-            <label className="mt-5 flex items-center gap-3 text-sm text-slate-600">
-              <input type="checkbox" required className="w-5 h-5" />
-              Ich stimme der Verarbeitung meiner Daten gemäß der
-              Datenschutzerklärung zu.
+            <label className="mt-5 flex items-start gap-3 text-xs leading-5 text-slate-600 md:text-sm">
+              <input type="checkbox" required className="mt-0.5 h-4 w-4 shrink-0 md:h-5 md:w-5" />
+              <span>
+                Ich stimme der Verarbeitung meiner Daten gemäß der
+                Datenschutzerklärung zu.
+              </span>
             </label>
 
             <button
               type="submit"
-              className="mt-7 ml-auto flex items-center gap-4 bg-[#061a33] text-white px-8 py-4 rounded-md hover:bg-[#0b2a52] transition cursor-pointer"
+              className="mt-7 flex w-full items-center justify-center gap-3 rounded-md bg-[#061a33] px-6 py-4 text-sm text-white transition hover:bg-[#0b2a52] md:ml-auto md:w-auto md:gap-4 md:px-8 md:text-base"
             >
-              Nachricht senden <ArrowRight className="w-5 h-5" />
+              Nachricht senden <ArrowRight className="h-5 w-5" />
             </button>
           </form>
         </div>
