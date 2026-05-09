@@ -95,31 +95,41 @@ export default function LeistungenPage() {
   return (
     <main className="min-h-screen overflow-x-hidden bg-white text-[#061a33]">
       {/* TABS */}
-      <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-2 md:grid-cols-5">
-          {services.map((service, index) => {
-            const Icon = service.icon;
+<section className="border-b border-slate-100 bg-white">
+  <div className="mx-auto max-w-7xl px-5 py-4 md:px-6 md:py-6">
+    <div className="flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-5 md:gap-4 md:overflow-visible md:pb-0">
+      {services.map((service, index) => {
+        const Icon = service.icon;
 
-            return (
-              <button
-                key={service.title}
-                onClick={() => setActive(index)}
-                className={`flex h-20 items-center justify-center gap-2 border-r border-slate-200 px-3 transition md:h-28 md:gap-4 md:px-6 ${
-                  active === index
-                    ? "border-b-4 border-b-[#061a33] bg-white shadow-md md:shadow-lg"
-                    : "hover:bg-slate-50"
-                }`}
-              >
-                <Icon className="h-6 w-6 text-[#061a33] md:h-8 md:w-8" />
+        return (
+          <button
+            key={service.title}
+            onClick={() => setActive(index)}
+            className={`flex min-w-[150px] items-center justify-center gap-2 rounded-full border px-4 py-3 text-xs font-semibold transition md:min-w-0 md:rounded-2xl md:py-5 md:text-sm ${
+              active === index
+                ? "border-[#061a33] bg-[#061a33] text-white shadow-md"
+                : "border-slate-200 bg-white text-[#061a33] hover:border-[#061a33]/40"
+            }`}
+          >
+            <Icon
+              className={`h-4 w-4 md:h-6 md:w-6 ${
+                active === index ? "text-white" : "text-[#061a33]"
+              }`}
+            />
 
-                <span className="hidden text-sm font-bold leading-tight lg:block">
-                  {service.title}
-                </span>
-              </button>
-            );
-          })}
-        </div>
-      </section>
+            <span className="whitespace-nowrap md:hidden">
+              {service.title}
+            </span>
+
+            <span className="hidden leading-tight md:block">
+              {service.title}
+            </span>
+          </button>
+        );
+      })}
+    </div>
+  </div>
+</section>
 
       {/* CONTENT */}
       <section className="mx-auto grid max-w-7xl grid-cols-1 overflow-hidden lg:grid-cols-[0.8fr_1.4fr]">
