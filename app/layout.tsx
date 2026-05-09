@@ -3,8 +3,11 @@ import Link from "next/link";
 import MobileMenu from "./MobileMenu";
 
 export const metadata = {
-  title: "DEM Planung",
-  description: "Design · Engineering · Management",
+  title:
+    "DEM Planung · Landstuhl – Planung, Statik & Visualisierung",
+
+  description:
+    "DEM Planung aus Landstuhl – Architekturplanung, Bauanträge, Statik, Visualisierung und Bestandsplanung. Effizient. Präzise. Persönlich.",
 
   icons: {
     icon: [
