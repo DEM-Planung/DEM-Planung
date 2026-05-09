@@ -104,6 +104,15 @@ export default function RootLayout({
                   <Link href="/impressum" className="transition hover:text-white">
                     Impressum
                   </Link>
+                  <span>|</span>
+
+<button
+  type="button"
+  onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))}
+  className="transition hover:text-white"
+>
+  Cookie-Einstellungen
+</button>
                 </div>
               </div>
 
