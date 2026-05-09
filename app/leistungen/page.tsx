@@ -46,7 +46,7 @@ const services = [
     title: "Bestandsaufnahme",
     subtitle: "INNENAUFMASS",
     icon: Ruler,
-    image:"/bestandsaufnahme.png",
+    image: "/bestandsaufnahme.png",
     text: "Wir erfassen bestehende Gebäude präzise im Innenbereich und erstellen daraus verlässliche digitale Grundlagen für Planung, Umbau und Genehmigung.",
     items: [
       "Aufmaß von Innenräumen",
@@ -93,10 +93,10 @@ export default function LeistungenPage() {
   const CurrentIcon = current.icon;
 
   return (
-    <main className="min-h-screen bg-white text-[#061a33]">
+    <main className="min-h-screen overflow-x-hidden bg-white text-[#061a33]">
       {/* TABS */}
       <section className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-7xl grid grid-cols-2 md:grid-cols-5">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 md:grid-cols-5">
           {services.map((service, index) => {
             const Icon = service.icon;
 
@@ -104,15 +104,15 @@ export default function LeistungenPage() {
               <button
                 key={service.title}
                 onClick={() => setActive(index)}
-                className={`h-28 flex items-center justify-center gap-4 px-6 border-r border-slate-200 transition ${
+                className={`flex h-20 items-center justify-center gap-2 border-r border-slate-200 px-3 transition md:h-28 md:gap-4 md:px-6 ${
                   active === index
-                    ? "bg-white shadow-lg border-b-4 border-b-[#061a33]"
+                    ? "border-b-4 border-b-[#061a33] bg-white shadow-md md:shadow-lg"
                     : "hover:bg-slate-50"
                 }`}
               >
-                <Icon className="w-8 h-8 text-[#061a33]" />
+                <Icon className="h-6 w-6 text-[#061a33] md:h-8 md:w-8" />
 
-                <span className="hidden lg:block font-bold leading-tight">
+                <span className="hidden text-sm font-bold leading-tight lg:block">
                   {service.title}
                 </span>
               </button>
@@ -122,36 +122,40 @@ export default function LeistungenPage() {
       </section>
 
       {/* CONTENT */}
-      <section className="mx-auto max-w-7xl grid lg:grid-cols-[0.8fr_1.4fr] h-[760px] overflow-hidden">
+      <section className="mx-auto grid max-w-7xl grid-cols-1 overflow-hidden lg:grid-cols-[0.8fr_1.4fr]">
         {/* TEXT */}
-        <div className="px-6 py-20 lg:pr-16 h-full">
+        <div className="px-5 py-10 md:px-6 md:py-14 lg:py-20 lg:pr-16">
           <div>
-            <h1 className="text-5xl font-black tracking-tight">
+            <h1 className="text-3xl font-black tracking-tight md:text-5xl">
               {current.title}
             </h1>
 
-            <h2 className="mt-5 text-2xl font-black uppercase">
+            <h2 className="mt-4 text-lg font-black uppercase md:mt-5 md:text-2xl">
               {current.subtitle}
             </h2>
 
-            <p className="mt-8 text-lg leading-8 text-slate-700">
+            <p className="mt-6 text-sm leading-7 text-slate-700 md:mt-8 md:text-lg md:leading-8">
               {current.text}
             </p>
           </div>
 
           <div>
-            <div className="mt-10 h-px w-12 bg-[#061a33]" />
+            <div className="mt-8 h-px w-12 bg-[#061a33] md:mt-10" />
 
-            <h3 className="mt-8 text-xl font-black">Unsere Leistungen</h3>
+            <h3 className="mt-6 text-lg font-black md:mt-8 md:text-xl">
+              Unsere Leistungen
+            </h3>
 
-            <div className="mt-6 space-y-4">
+            <div className="mt-5 space-y-3 md:mt-6 md:space-y-4">
               {current.items.map((item) => (
                 <div
                   key={item}
-                  className="flex items-center gap-4 border-b border-slate-100 pb-3"
+                  className="flex items-start gap-3 border-b border-slate-100 pb-3 md:items-center md:gap-4"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-[#061a33] shrink-0" />
-                  <span className="text-slate-800 font-medium">{item}</span>
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-[#061a33] md:mt-0 md:h-5 md:w-5" />
+                  <span className="text-sm font-medium text-slate-800 md:text-base">
+                    {item}
+                  </span>
                 </div>
               ))}
             </div>
@@ -159,29 +163,29 @@ export default function LeistungenPage() {
         </div>
 
         {/* IMAGE */}
-        <div className="relative h-full min-h-[420px]">
+        <div className="relative h-[280px] md:h-[420px] lg:h-auto lg:min-h-[760px]">
           <img
-  src={current.image}
-  alt={current.title}
-  className="absolute inset-0 h-full w-full object-cover object-[55%_center]"
-/>
+            src={current.image}
+            alt={current.title}
+            className="absolute inset-0 h-full w-full object-cover object-[55%_center]"
+          />
         </div>
       </section>
 
       {/* CTA */}
       <section className="border-t border-slate-100 bg-slate-50">
-        <div className="mx-auto max-w-7xl px-6 h-40 flex flex-col md:flex-row items-center justify-between gap-8">
-          <div className="flex items-center gap-6">
-            <div className="w-16 h-16 rounded-full border border-[#061a33] flex items-center justify-center shrink-0">
-              <CurrentIcon className="w-8 h-8" />
+        <div className="mx-auto flex max-w-7xl flex-col gap-7 px-5 py-10 md:px-6 md:py-12 lg:h-40 lg:flex-row lg:items-center lg:justify-between lg:py-0">
+          <div className="flex items-start gap-4 md:gap-6">
+            <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border border-[#061a33] md:h-16 md:w-16">
+              <CurrentIcon className="h-6 w-6 md:h-8 md:w-8" />
             </div>
 
             <div>
-              <h3 className="text-2xl font-black">
+              <h3 className="text-xl font-black md:text-2xl">
                 Sie planen ein Bauvorhaben?
               </h3>
 
-              <p className="text-slate-600 mt-1">
+              <p className="mt-1 text-sm leading-6 text-slate-600 md:text-base">
                 Wir unterstützen Sie mit Planung, Statik und Visualisierung aus
                 einer Hand.
               </p>
@@ -190,9 +194,9 @@ export default function LeistungenPage() {
 
           <a
             href="/kontakt"
-            className="bg-[#061a33] text-white px-8 py-4 rounded-md flex items-center gap-4"
+            className="flex w-full items-center justify-center gap-3 rounded-md bg-[#061a33] px-6 py-4 text-sm text-white md:w-auto md:gap-4 md:px-8 md:text-base"
           >
-            Projekt anfragen <ArrowRight className="w-5 h-5" />
+            Projekt anfragen <ArrowRight className="h-5 w-5" />
           </a>
         </div>
       </section>
