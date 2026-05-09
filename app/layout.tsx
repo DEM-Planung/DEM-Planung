@@ -1,5 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
+import CookieBanner from "@/components/CookieBanner";
 import MobileMenu from "./MobileMenu";
 
 export const metadata = {
@@ -136,6 +137,7 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
+      <CookieBanner />
       </body>
     </html>
   );
