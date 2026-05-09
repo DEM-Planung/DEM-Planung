@@ -101,30 +101,34 @@ export default function KontaktPage() {
     <br />
     Ihr Bauvorhaben kennenzulernen.
   </p>
+<div className="grid md:grid-cols-2 gap-5">
+
+  <input
+    name="name"
+    placeholder="Ihr Name"
+    className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+  />
+
+  <input
+    name="email"
+    placeholder="Ihre E-Mail"
+    className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+  />
+
 </div>
-          <form className="mt-8 rounded-2xl border border-slate-200 p-8 shadow-sm">
-            <div className="grid md:grid-cols-2 gap-5">
-              <input
-                placeholder="Ihr Name"
-                className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
-              />
 
-              <input
-                placeholder="Ihre E-Mail"
-                className="w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
-              />
-            </div>
+<input
+  name="betreff"
+  placeholder="Betreff"
+  className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+/>
 
-            <input
-              placeholder="Betreff"
-              className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
-            />
-
-            <textarea
-              placeholder="Ihre Nachricht"
-              rows={8}
-              className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
-            />
+<textarea
+  name="nachricht"
+  placeholder="Ihre Nachricht"
+  rows={8}
+  className="mt-5 w-full border border-slate-200 rounded-md px-5 py-4 outline-none focus:border-[#061a33]"
+/>
 
             <label className="mt-5 flex items-center gap-3 text-sm text-slate-600">
               <input type="checkbox" className="w-5 h-5" />
