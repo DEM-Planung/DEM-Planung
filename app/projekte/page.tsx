@@ -80,7 +80,8 @@ const projects = [
 
     about:
       "Das Bauvorhaben „An den Augärten“ in Bad Soden-Salmünster umfasst die Entwicklung eines ganzheitlich geplanten Quartiers mit unterschiedlichen Nutzungen und einem klaren Fokus auf moderne Wohn- und Versorgungskonzepte. Das Quartier vereint Wohnen, medizinische Versorgung sowie soziale Einrichtungen in einer funktional abgestimmten Gesamtstruktur. Geplant wurden unter anderem ein Medizinisches Versorgungszentrum (MVZ), ein Kindergarten, eine Intensivpflegeeinrichtung, Wohnbereiche sowie gastronomische Nutzungen zur Versorgung der Bewohner und Besucher des Quartiers. Die städtebauliche Konzeption basiert auf einer offenen und einladenden Architektur mit großzügigen Aufenthaltsflächen, begrünten Innenbereichen und einer klar gegliederten Baukörperstruktur. Besonderes Augenmerk lag auf der Schaffung eines generationenübergreifenden Nutzungskonzepts mit hoher Aufenthaltsqualität und kurzen Wegen innerhalb des Quartiers. Unser Büro begleitet das Projekt in sämtlichen Leistungsphasen (LPH 1–9) – von der ersten Konzeptidee über die Entwurfs- und Genehmigungsplanung bis hin zur Ausführungsplanung und späteren Realisierung. Ergänzend dazu wurden hochwertige Innen- und Außenvisualisierungen erstellt, um die architektonische Qualität und die Atmosphäre des Quartiers bereits frühzeitig realitätsnah darzustellen. Der geplante Baubeginn ist für 2026 vorgesehen, die voraussichtliche Bauzeit beträgt etwa 36 Monate.",
-  {
+  },
+      {
   title: "Quartier Rathausblick Völklingen",
   tag: "Urban",
   type: "Wohn- & Gewerbeprojekt",
