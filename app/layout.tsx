@@ -60,10 +60,10 @@ export default function RootLayout({
             {/* Inhalt */}
             <div className="relative z-10 w-full px-6 py-16">
 
-              <div className="grid md:grid-cols-3 gap-16">
+              <div className="grid md:grid-cols-3 gap-16 text-center items-center">
 
                 {/* Logo */}
-                <div>
+                <div className="flex flex-col items-center">
                   <p className="text-2xl font-semibold text-white">
                     DEM-Planung GmbH
                   </p>
