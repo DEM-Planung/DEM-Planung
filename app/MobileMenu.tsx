@@ -33,20 +33,47 @@ export default function MobileMenu() {
             </div>
 
             <nav className="flex flex-col gap-6 text-lg tracking-[0.12em] text-[#061a33]">
-              <Link onClick={() => setOpen(false)} href="/">Home</Link>
-              <Link onClick={() => setOpen(false)} href="/leistungen">Leistungen</Link>
+              <Link onClick={() => setOpen(false)} href="/">
+                Home
+              </Link>
+
+              <Link onClick={() => setOpen(false)} href="/leistungen">
+                Leistungen
+              </Link>
 
               <div className="ml-4 flex flex-col gap-3 text-sm tracking-[0.08em] text-slate-500">
-                <Link onClick={() => setOpen(false)} href="/leistungen">Bauantrag & Planung</Link>
-                <Link onClick={() => setOpen(false)} href="/leistungen">Statik</Link>
-                <Link onClick={() => setOpen(false)} href="/leistungen">Bestandsaufnahme</Link>
-                <Link onClick={() => setOpen(false)} href="/leistungen">Flächen & Kosten</Link>
-                <Link onClick={() => setOpen(false)} href="/leistungen">Renderings</Link>
+                <Link onClick={() => setOpen(false)} href="/leistungen?tab=planung">
+                  Bauantrag & Planung
+                </Link>
+
+                <Link onClick={() => setOpen(false)} href="/leistungen?tab=statik">
+                  Statik
+                </Link>
+
+                <Link onClick={() => setOpen(false)} href="/leistungen?tab=bestand">
+                  Bestandsaufnahme
+                </Link>
+
+                <Link onClick={() => setOpen(false)} href="/leistungen?tab=flaechen">
+                  Flächen & Kosten
+                </Link>
+
+                <Link onClick={() => setOpen(false)} href="/leistungen?tab=renderings">
+                  Renderings
+                </Link>
               </div>
 
-              <Link onClick={() => setOpen(false)} href="/projekte">Projekte</Link>
-              <Link onClick={() => setOpen(false)} href="/ueber-uns">Über uns</Link>
-              <Link onClick={() => setOpen(false)} href="/kontakt">Kontakt</Link>
+              <Link onClick={() => setOpen(false)} href="/projekte">
+                Projekte
+              </Link>
+
+              <Link onClick={() => setOpen(false)} href="/ueber-uns">
+                Über uns
+              </Link>
+
+              <Link onClick={() => setOpen(false)} href="/kontakt">
+                Kontakt
+              </Link>
 
               <Link
                 onClick={() => setOpen(false)}
