@@ -24,126 +24,112 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de">
-      <body className="bg-white text-slate-900">
+      <body className="overflow-x-hidden bg-white text-slate-900">
+        {/* HEADER */}
+        <header className="border-b border-slate-200 bg-white">
+          <div className="mx-auto flex h-20 w-full items-center justify-between px-4 md:h-30 md:px-6">
+            <Link href="/">
+              <img
+                src="/logo.png"
+                alt="DEM Planung"
+                className="h-28 w-auto cursor-pointer md:h-60"
+              />
+            </Link>
 
+            <nav className="hidden items-center gap-10 text-[15px] font-medium text-[#061a33] md:flex">
+              <Link href="/">Home</Link>
+              <Link href="/leistungen">Leistungen</Link>
+              <Link href="/projekte">Projekte</Link>
+              <Link href="/ueber-uns">Über uns</Link>
+              <Link href="/kontakt">Kontakt</Link>
 
-          {/* HEADER */}
-          <header className="border-b border-slate-200 bg-white">
-            <div className="mx-auto w-full px-6 h-30 flex items-center justify-between">
-
-              <Link href="/">
-                <img
-                  src="/logo.png"
-                  alt="DEM Planung"
-                  className="h-60 w-auto cursor-pointer"
-                />
+              <Link
+                href="/kontakt"
+                className="rounded-xl bg-[#061a33] px-6 py-3 text-white"
+              >
+                Projekt anfragen
               </Link>
+            </nav>
+          </div>
+        </header>
 
-              <nav className="flex items-center gap-10 text-[15px] font-medium text-[#061a33]">
-                <Link href="/">Home</Link>
-                <Link href="/leistungen">Leistungen</Link>
-                <Link href="/projekte">Projekte</Link>
-                <Link href="/ueber-uns">Über uns</Link>
-                <Link href="/kontakt">Kontakt</Link>
+        {/* SEITENINHALT */}
+        {children}
 
-                <Link
-                  href="/kontakt"
-                  className="bg-[#061a33] text-white px-6 py-3 rounded-xl"
-                >
-                  Projekt anfragen
-                </Link>
-              </nav>
-            </div>
-          </header>
+        {/* FOOTER */}
+        <footer className="relative overflow-hidden text-white">
+          <div
+            className="absolute inset-0 bg-cover bg-[center_50%]"
+            style={{
+              backgroundImage: "url('/footer-bg.png')",
+            }}
+          />
 
-          {/* SEITENINHALT */}
-          {children}
+          <div className="absolute inset-0 bg-black/45" />
 
-          {/* FOOTER */}
-          <footer className="relative overflow-hidden text-white">
+          <div className="relative z-10 w-full px-5 py-12 md:px-6 md:py-16">
+            <div className="grid gap-10 text-center md:grid-cols-3 md:gap-16 md:items-center">
+              <div className="flex flex-col items-center">
+                <p className="text-xl font-semibold text-white md:text-2xl">
+                  DEM-Planung GmbH
+                </p>
 
-            {/* Hintergrundbild */}
-            <div
-              className="absolute inset-0 bg-cover bg-[center_50%]"
-              style={{
-                backgroundImage: "url('/footer-bg.png')",
-              }}
-            />
+                <p className="mt-4 max-w-sm text-sm leading-7 text-white/80 md:text-base md:leading-8">
+                  Architektur, Planung, Statik und Visualisierung aus einer Hand.
+                </p>
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/45" />
-
-            {/* Inhalt */}
-            <div className="relative z-10 w-full px-6 py-16">
-
-              <div className="grid md:grid-cols-3 gap-16 text-center items-center">
-
-                {/* Logo */}
-                <div className="flex flex-col items-center">
-                  <p className="text-2xl font-semibold text-white">
-                    DEM-Planung GmbH
-                  </p>
-
-                  <p className="mt-4 text-white/80 leading-8">
-                    Architektur, Planung, Statik und
-                    Visualisierung aus einer Hand.
-                  </p>
-
-                  <div className="mt-8 flex items-center gap-4 text-sm text-white/70">
-                    <Link href="/kontakt" className="hover:text-white transition">
-                      Kontakt
-                    </Link>
-
-                    <span>|</span>
-
-                    <Link href="/datenschutz" className="hover:text-white transition">
-                      Datenschutz
-                    </Link>
-
-                    <span>|</span>
-
-                    <Link href="/impressum" className="hover:text-white transition">
-                      Impressum
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Kontakt */}
-                <div>
-                  <h3 className="text-2xl font-semibold mb-6">
+                <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-sm text-white/70 md:mt-8 md:gap-4">
+                  <Link href="/kontakt" className="transition hover:text-white">
                     Kontakt
-                  </h3>
+                  </Link>
 
-                  <div className="space-y-3 text-white/80">
-                    <p>+49 176 724 611 07</p>
-                    <p>+49 176 637 814 72</p>
-                    <p>info@dem-planung.de</p>
-                  </div>
-                </div>
+                  <span>|</span>
 
-                {/* Adresse */}
-                <div>
-                  <h3 className="text-2xl font-semibold mb-6">
-                    Adresse
-                  </h3>
+                  <Link
+                    href="/datenschutz"
+                    className="transition hover:text-white"
+                  >
+                    Datenschutz
+                  </Link>
 
-                  <div className="space-y-3 text-white/80">
-                    <p>DEM-Planung GmbH</p>
-                    <p>Kanalstraße 2a</p>
-                    <p>66849 Landstuhl</p>
-                  </div>
+                  <span>|</span>
+
+                  <Link href="/impressum" className="transition hover:text-white">
+                    Impressum
+                  </Link>
                 </div>
               </div>
 
-              <div className="border-t border-white/20 mt-16 pt-8 text-sm text-white/60">
-                © 2026 DEM-Planung GmbH
+              <div>
+                <h3 className="mb-4 text-xl font-semibold md:mb-6 md:text-2xl">
+                  Kontakt
+                </h3>
+
+                <div className="space-y-2 text-sm text-white/80 md:space-y-3 md:text-base">
+                  <p>+49 176 724 611 07</p>
+                  <p>+49 176 637 814 72</p>
+                  <p>info@dem-planung.de</p>
+                </div>
               </div>
 
+              <div>
+                <h3 className="mb-4 text-xl font-semibold md:mb-6 md:text-2xl">
+                  Adresse
+                </h3>
+
+                <div className="space-y-2 text-sm text-white/80 md:space-y-3 md:text-base">
+                  <p>DEM-Planung GmbH</p>
+                  <p>Kanalstraße 2a</p>
+                  <p>66849 Landstuhl</p>
+                </div>
+              </div>
             </div>
-          </footer>
 
-        
-
+            <div className="mt-12 border-t border-white/20 pt-6 text-center text-xs text-white/60 md:mt-16 md:pt-8 md:text-sm">
+              © 2026 DEM-Planung GmbH
+            </div>
+          </div>
+        </footer>
       </body>
     </html>
   );
