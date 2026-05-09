@@ -86,27 +86,7 @@ export default function RootLayout({
                   Architektur, Planung, Statik und Visualisierung aus einer Hand.
                 </p>
 
-                <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-sm text-white/70 md:mt-8 md:gap-4">
-                  <Link href="/kontakt" className="transition hover:text-white">
-                    Kontakt
-                  </Link>
-
-                  <span>|</span>
-
-                  <Link
-                    href="/datenschutz"
-                    className="transition hover:text-white"
-                  >
-                    Datenschutz
-                  </Link>
-
-                  <span>|</span>
-
-                  <Link href="/impressum" className="transition hover:text-white">
-                    Impressum
-                  </Link>
-                </div>
-              </div>
+                <Footer />
 
               <div>
                 <h3 className="mb-4 text-xl font-semibold md:mb-6 md:text-2xl">
