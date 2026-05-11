@@ -4,6 +4,12 @@ import CookieBanner from "@/components/CookieBanner";
 import MobileMenu from "./MobileMenu";
 
 export const metadata = {
+  metadataBase: new URL("https://www.dem-planung.de"),
+
+  alternates: {
+    canonical: "/",
+  },
+
   title:
     "DEM Planung GmbH · Landstuhl – Planung, Statik & Visualisierung",
 
