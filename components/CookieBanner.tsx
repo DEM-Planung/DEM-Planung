@@ -19,12 +19,23 @@ export default function CookieBanner() {
   });
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookie-consent");
+  const consent = localStorage.getItem("cookie-consent");
 
-    if (!consent) {
-      setShowBanner(true);
-    }
-  }, []);
+  if (!consent) {
+    setShowBanner(true);
+  }
+
+  const openSettings = () => {
+    setShowBanner(true);
+    setShowSettings(true);
+  };
+
+  window.addEventListener("open-cookie-settings", openSettings);
+
+  return () => {
+    window.removeEventListener("open-cookie-settings", openSettings);
+  };
+}, []);
 
   const saveConsent = (newSettings: CookieSettings) => {
     localStorage.setItem("cookie-consent", JSON.stringify(newSettings));

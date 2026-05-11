@@ -1,4 +1,5 @@
 import "./globals.css";
+import Footer from "@/components/Footer";
 import Link from "next/link";
 import CookieBanner from "@/components/CookieBanner";
 import MobileMenu from "./MobileMenu";
@@ -81,7 +82,7 @@ export default function RootLayout({
           <div className="absolute inset-0 bg-black/45" />
 
           <div className="relative z-10 w-full px-5 py-12 md:px-6 md:py-16">
-            <div className="grid gap-10 text-center md:grid-cols-3 md:gap-16 md:items-center">
+            <div className="grid gap-10 text-center md:grid-cols-3 md:items-center md:gap-16">
               <div className="flex flex-col items-center">
                 <p className="text-xl font-semibold text-white md:text-2xl">
                   DEM-Planung GmbH
@@ -91,26 +92,7 @@ export default function RootLayout({
                   Architektur, Planung, Statik und Visualisierung aus einer Hand.
                 </p>
 
-                <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-sm text-white/70 md:mt-8 md:gap-4">
-                  <Link href="/kontakt" className="transition hover:text-white">
-                    Kontakt
-                  </Link>
-
-                  <span>|</span>
-
-                  <Link
-                    href="/datenschutz"
-                    className="transition hover:text-white"
-                  >
-                    Datenschutz
-                  </Link>
-
-                  <span>|</span>
-
-                  <Link href="/impressum" className="transition hover:text-white">
-                    Impressum
-                  </Link>
-                </div>
+                <Footer />
               </div>
 
               <div>
@@ -143,7 +125,8 @@ export default function RootLayout({
             </div>
           </div>
         </footer>
-      <CookieBanner />
+
+        <CookieBanner />
       </body>
     </html>
   );
