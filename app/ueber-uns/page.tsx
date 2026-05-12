@@ -2,15 +2,22 @@
 
 import { useState } from "react";
 
-type Person = "furkan" | "mehmet";
+type Person = "mehmet" | "furkan";
 
 const furkanData = {
   name: "Furkan Demirci",
   timeline: [
-    ["2020 – 2025", "Studium Bachelor of Arts Architektur an der Hochschule Kaiserslautern"],
-    ["01/2026 – 09/2026", "Selbstständig als freiberuflicher Bachelor of Arts"],
-    ["Seit 09/2026", "Geschäftsführer DEM-Planung GmbH"],
+    [
+      "2020 – 2025",
+      "Studium Bachelor of Arts Architektur an der Hochschule Kaiserslautern",
+    ],
+    [
+      "01/2026 – 05/2026",
+      "Selbstständig als freiberuflicher Bachelor of Arts",
+    ],
+    ["Seit 05/2026", "Geschäftsführer DEM-Planung GmbH"],
   ],
+
   kompetenzen: [
     "Entwurf und Entwicklung moderner Wohn- und Quartierskonzepte",
     "Fotorealistische Architekturvisualisierung für Vermarktung und Planung",
@@ -19,21 +26,34 @@ const furkanData = {
     "Optimierung von Grundrissen unter funktionalen und wirtschaftlichen Aspekten",
     "Professionelle Projektaufbereitung für Bauherren, Investoren und Behörden",
   ],
-  tools: ["Vectorworks", "ArchiCAD", "Twinmotion", "Lumion", "Enscape", "Photoshop", "InDesign"],
+
+  tools: [
+    "Vectorworks",
+    "ArchiCAD",
+    "Twinmotion",
+    "Lumion",
+    "Enscape",
+    "Photoshop",
+    "InDesign",
+  ],
+
   email: "f.demirci@dem-planung.de",
   phone: "+49 176 724 611 07",
 };
 
 const mehmetData = {
   name: "Mehmet Ali Demirci",
+
   timeline: [
     ["2016 – 2020", "Studium Bauingenieurwesen an der HTW des Saarlandes"],
-    ["02/2020 – 01/2021", "Angestellt bei Planungsbüro Bohnert"],
+    ["02/2018 – 01/2021", "Angestellt bei Planungsbüro Bohnert"],
     ["02/2021 – 03/2025", "Geschäftsführer bei den KD-Ingenieuren"],
     ["03/2025 – 09/2026", "Geschäftsführer bei der DMA-Planung"],
-    ["Seit 09/2026", "Geschäftsführer bei der DEM-Planung GmbH"],
+    ["Seit 05/2026", "Geschäftsführer bei der DEM-Planung GmbH"],
   ],
+
   kompetenzen: [
+    "Architekturplanung und Entwicklung funktionaler Gebäudekonzepte",
     "Tragwerksplanung und statische Berechnungen im Hochbau",
     "Erstellung prüffähiger Statiknachweise",
     "Genehmigungsplanung und Bauantragsunterlagen",
@@ -41,17 +61,18 @@ const mehmetData = {
     "Kostenberechnung und wirtschaftliche Projektbewertung",
     "Fachbauleitung, Vor-Ort-Betreuung und statische Abnahmen",
   ],
+
   qualifikationen: [
     "Eingetragen in der Ingenieurkammer des Saarlandes",
-    "Bauvorlagenberechtigt",
-    "Bachelor of Engineering – Bauingenieurwesen",
   ],
+
   email: "ma.demirci@dem-planung.de",
   phone: "+49 176 637 814 72",
 };
 
 export default function UeberUnsPage() {
-  const [activePerson, setActivePerson] = useState<Person>("furkan");
+  const [activePerson, setActivePerson] =
+    useState<Person>("mehmet");
 
   return (
     <main className="min-h-screen overflow-x-hidden bg-[#f8f8f8] text-[#061a33]">
@@ -74,35 +95,37 @@ export default function UeberUnsPage() {
 
             <div className="space-y-5 text-sm leading-7 text-slate-600 md:space-y-8 md:text-[17px] md:leading-9">
               <p>
-                Die DEM Planung GmbH wurde im Jahr 2026 gegründet und steht für
-                moderne, wirtschaftliche und präzise Planungslösungen im Bereich
-                Architektur, Tragwerksplanung und Projektentwicklung.
+                Die DEM Planung GmbH wurde im Jahr 2026 gegründet
+                und steht für moderne, wirtschaftliche und präzise
+                Planungslösungen im Bereich Architektur,
+                Tragwerksplanung und Projektentwicklung.
               </p>
 
               <p>
                 Bereits vor der gemeinsamen Gründung sammelten die
-                verantwortlichen Planer mehrjährige praktische Erfahrung in
-                unterschiedlichsten Bauvorhaben.
+                verantwortlichen Planer mehrjährige praktische
+                Erfahrung in unterschiedlichsten Bauvorhaben.
               </p>
 
               <p>
-                Heute begleitet die DEM Planung GmbH Projekte von der ersten
-                Idee bis zur genehmigungsfähigen Umsetzung — mit einem klaren
-                Fokus auf Funktionalität, Wirtschaftlichkeit und gestalterische
-                Qualität.
+                Heute begleitet die DEM Planung GmbH Projekte von der
+                ersten Idee bis zur genehmigungsfähigen Umsetzung —
+                mit einem klaren Fokus auf Funktionalität,
+                Wirtschaftlichkeit und gestalterische Qualität.
               </p>
 
               <p>
-                Durch die Verbindung aus Architektur, Bestandsaufnahme,
-                Tragwerksplanung und Visualisierung entstehen ganzheitliche
-                Lösungen aus einer Hand.
+                Durch die Verbindung aus Architektur,
+                Bestandsaufnahme, Tragwerksplanung und
+                Visualisierung entstehen ganzheitliche Lösungen aus
+                einer Hand.
               </p>
             </div>
 
             <div className="mt-9 border-l-4 border-[#061a33] pl-5 md:mt-14 md:pl-6">
               <p className="text-lg font-semibold leading-relaxed md:text-2xl">
-                Unser Anspruch ist es, Gestaltung, Präzision und technische
-                Qualität in Einklang zu bringen.
+                Unser Anspruch ist es, Gestaltung, Präzision und
+                technische Qualität in Einklang zu bringen.
               </p>
             </div>
           </div>
@@ -124,6 +147,22 @@ export default function UeberUnsPage() {
           <div className="grid gap-8 md:grid-cols-2">
             <div>
               <TeamCard
+                active={activePerson === "mehmet"}
+                onClick={() => setActivePerson("mehmet")}
+                image="/mehmet.png"
+                name="Mehmet Ali Demirci"
+                role="Architektur · Tragwerksplanung · Genehmigungsplanung"
+              />
+
+              {activePerson === "mehmet" && (
+                <div className="mt-8 md:hidden">
+                  <DetailBox {...mehmetData} />
+                </div>
+              )}
+            </div>
+
+            <div>
+              <TeamCard
                 active={activePerson === "furkan"}
                 onClick={() => setActivePerson("furkan")}
                 image="/furkan.jpg"
@@ -137,27 +176,16 @@ export default function UeberUnsPage() {
                 </div>
               )}
             </div>
-
-            <div>
-              <TeamCard
-                active={activePerson === "mehmet"}
-                onClick={() => setActivePerson("mehmet")}
-                image="/mehmet.png"
-                name="Mehmet Ali Demirci"
-                role="Tragwerksplanung · Statik · Baukosten"
-              />
-
-              {activePerson === "mehmet" && (
-                <div className="mt-8 md:hidden">
-                  <DetailBox {...mehmetData} />
-                </div>
-              )}
-            </div>
           </div>
 
           <div className="mt-12 hidden md:block">
-            {activePerson === "furkan" && <DetailBox {...furkanData} />}
-            {activePerson === "mehmet" && <DetailBox {...mehmetData} />}
+            {activePerson === "mehmet" && (
+              <DetailBox {...mehmetData} />
+            )}
+
+            {activePerson === "furkan" && (
+              <DetailBox {...furkanData} />
+            )}
           </div>
         </div>
       </section>
@@ -200,9 +228,13 @@ function TeamCard({
           Geschäftsführer
         </p>
 
-        <h3 className="mb-2 text-2xl font-black md:text-4xl">{name}</h3>
+        <h3 className="mb-2 text-2xl font-black md:text-4xl">
+          {name}
+        </h3>
 
-        <p className="text-sm text-white/80 md:text-lg">{role}</p>
+        <p className="text-sm text-white/80 md:text-lg">
+          {role}
+        </p>
       </div>
     </button>
   );
@@ -244,9 +276,63 @@ function DetailBox({
 
         <InfoList title="Kompetenzen" items={kompetenzen} />
 
-        {qualifikationen && (
+        {qualifikationen && name === "Mehmet Ali Demirci" && (
           <div className="mt-10 md:mt-14">
-            <InfoList title="Qualifikationen" items={qualifikationen} />
+            <h3 className="mb-5 text-xl font-black uppercase md:mb-8 md:text-2xl">
+              Qualifikationen
+            </h3>
+
+            <div className="space-y-5 text-slate-700">
+              <div className="flex gap-4">
+                <div className="h-8 w-[3px] rounded-full bg-[#061a33]" />
+
+                <p className="text-sm leading-7 md:text-base md:leading-8">
+                  Eingetragen in der Ingenieurkammer des
+                  Saarlandes
+                </p>
+              </div>
+
+              <div className="ml-8 flex gap-4">
+                <span className="text-xl text-[#061a33]">
+                  ↳
+                </span>
+
+                <div>
+                  <p className="text-sm leading-7 md:text-base md:leading-8">
+                    Bauvorlagenberechtigt
+                  </p>
+
+                  <p className="text-xs text-slate-500 md:text-sm">
+                    seit 10/2024
+                  </p>
+                </div>
+              </div>
+
+              <div className="ml-8 flex gap-4">
+                <span className="text-xl text-[#061a33]">
+                  ↳
+                </span>
+
+                <div>
+                  <p className="text-sm leading-7 md:text-base md:leading-8">
+                    Eingetragen als Tragwerksplaner
+                  </p>
+
+                  <p className="text-xs text-slate-500 md:text-sm">
+                    seit 10/2024
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex gap-4">
+                <div className="h-8 w-[3px] rounded-full bg-[#061a33]" />
+
+                <p className="text-sm leading-7 md:text-base md:leading-8">
+                  Bachelor of Engineering –
+                  Bauingenieurwesen
+                </p>
+              </div>
+            </div>
           </div>
         )}
 
@@ -275,7 +361,13 @@ function DetailBox({
   );
 }
 
-function TimelineItem({ date, text }: { date: string; text: string }) {
+function TimelineItem({
+  date,
+  text,
+}: {
+  date: string;
+  text: string;
+}) {
   return (
     <div className="grid gap-3 md:grid-cols-[180px_1fr] md:gap-6">
       <div className="text-sm font-bold text-[#061a33] md:text-base">
@@ -289,7 +381,13 @@ function TimelineItem({ date, text }: { date: string; text: string }) {
   );
 }
 
-function InfoList({ title, items }: { title: string; items: string[] }) {
+function InfoList({
+  title,
+  items,
+}: {
+  title: string;
+  items: string[];
+}) {
   return (
     <div>
       <h3 className="mb-5 text-xl font-black uppercase md:mb-8 md:text-2xl">
@@ -300,6 +398,7 @@ function InfoList({ title, items }: { title: string; items: string[] }) {
         {items.map((item) => (
           <div key={item} className="flex gap-3 md:gap-4">
             <div className="mt-1 h-auto min-h-6 w-[3px] shrink-0 rounded-full bg-[#061a33]" />
+
             <p className="text-sm leading-7 text-slate-700 md:text-base md:leading-8">
               {item}
             </p>
@@ -310,7 +409,13 @@ function InfoList({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-function ContactBox({ email, phone }: { email: string; phone: string }) {
+function ContactBox({
+  email,
+  phone,
+}: {
+  email: string;
+  phone: string;
+}) {
   return (
     <div className="border-t border-slate-200 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
       <div className="space-y-8 lg:sticky lg:top-0 lg:pt-2">
