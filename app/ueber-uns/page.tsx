@@ -151,7 +151,7 @@ export default function UeberUnsPage() {
                 onClick={() => setActivePerson("mehmet")}
                 image="/mehmet.png"
                 name="Mehmet Ali Demirci"
-                role="Architektur · Tragwerksplanung · Genehmigungsplanung"
+                role="Architektur · Tragwerksplanung · Baukosten"
               />
 
               {activePerson === "mehmet" && (
