@@ -48,7 +48,7 @@ const mehmetData = {
     ["2016 – 2020", "Studium Bauingenieurwesen an der HTW des Saarlandes"],
     ["02/2018 – 01/2021", "Angestellt bei Planungsbüro Bohnert"],
     ["02/2021 – 03/2025", "Geschäftsführer bei den KD-Ingenieuren"],
-    ["03/2025 – 09/2026", "Geschäftsführer bei der DMA-Planung"],
+    ["03/2025 – 04/2026", "Geschäftsführer bei der DMA-Planung"],
     ["Seit 05/2026", "Geschäftsführer bei der DEM-Planung GmbH"],
   ],
 
