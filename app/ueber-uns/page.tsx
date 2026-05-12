@@ -149,7 +149,7 @@ export default function UeberUnsPage() {
               <TeamCard
                 active={activePerson === "mehmet"}
                 onClick={() => setActivePerson("mehmet")}
-                image="/mehmet.png"
+                image="/mehmet.jpeg"
                 name="Mehmet Ali Demirci"
                 role="Architektur · Tragwerksplanung · Baukosten"
               />
