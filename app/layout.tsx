@@ -66,6 +66,30 @@ export default function RootLayout({
 
         {children}
 
+        <footer className="border-t border-slate-200 bg-white py-10">
+          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 text-center md:flex-row md:px-6 md:text-left">
+            <div>
+              <p className="text-lg font-semibold text-[#061a33]">
+                DEM Planung
+              </p>
+
+              <p className="mt-2 text-sm text-slate-600">
+                Architektur, Planung, Statik und Visualisierung.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-600">
+              <Link href="/kontakt">Kontakt</Link>
+              <Link href="/datenschutz">Datenschutz</Link>
+              <Link href="/impressum">Impressum</Link>
+            </div>
+
+            <div className="text-sm text-slate-600">
+              © 2026 DEM Planung
+            </div>
+          </div>
+        </footer>
+
         <CookieBanner />
       </body>
     </html>
