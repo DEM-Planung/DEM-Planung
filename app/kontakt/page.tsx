@@ -38,7 +38,7 @@ export default function KontaktPage() {
               <div>
                 <p className="text-sm font-black md:text-base">Adresse</p>
                 <p className="text-sm text-slate-600 md:text-base">
-                  Kanalstraße 2a
+                  Kolpingstraße 27
                   <br />
                   66849 Landstuhl
                 </p>
