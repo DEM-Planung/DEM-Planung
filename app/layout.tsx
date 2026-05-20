@@ -69,68 +69,67 @@ export default function RootLayout({
         {children}
 
         {/* FOOTER */}
-<footer
-  className="relative overflow-hidden text-white"
-  style={{
-    backgroundImage: "url('/footer-bg.png')",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
-  }}
->
-  <div className="bg-black/60">
-    <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-3">
-      <div>
-        <h3 className="mb-5 text-3xl font-semibold">DEM-Planung</h3>
+        <footer
+          className="relative overflow-hidden text-white"
+          style={{
+            backgroundImage: "url('/footer-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="bg-black/60">
+            <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-3">
+              {/* LINKS */}
+              <div>
+                <h3 className="mb-5 text-3xl font-semibold">
+                  DEM-Planung
+                </h3>
 
-        <p className="max-w-sm text-white/80">
-          Architektur, Planung, Statik und Visualisierung aus einer Hand.
-        </p>
+                <p className="max-w-sm text-white/80">
+                  Architektur, Planung, Statik und Visualisierung aus einer Hand.
+                </p>
 
-        <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/80">
-          <Link href="/kontakt">Kontakt</Link>
-          <span>|</span>
-          <Link href="/datenschutz">Datenschutz</Link>
-          <span>|</span>
-          <Link href="/impressum">Impressum</Link>
-          <span>|</span>
-          <button
-            type="button"
-            onClick={() =>
-              window.dispatchEvent(new Event("open-cookie-settings"))
-            }
-            className="transition hover:text-white"
-          >
-            Cookie-Einstellungen
-          </button>
-        </div>
-      </div>
+                <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/80">
+                  <Link href="/kontakt">Kontakt</Link>
+                  <span>|</span>
+                  <Link href="/datenschutz">Datenschutz</Link>
+                  <span>|</span>
+                  <Link href="/impressum">Impressum</Link>
+                </div>
+              </div>
 
-      <div>
-        <h3 className="mb-5 text-3xl font-semibold">Kontakt</h3>
+              {/* KONTAKT */}
+              <div>
+                <h3 className="mb-5 text-3xl font-semibold">
+                  Kontakt
+                </h3>
 
-        <div className="space-y-3 text-white/80">
-          <p>+49 176 724 611 07</p>
-          <p>+49 176 637 814 72</p>
-          <p>info@dem-planung.de</p>
-        </div>
-      </div>
+                <div className="space-y-3 text-white/80">
+                  <p>+49 176 724 611 07</p>
+                  <p>+49 176 637 814 72</p>
+                  <p>info@dem-planung.de</p>
+                </div>
+              </div>
 
-      <div>
-        <h3 className="mb-5 text-3xl font-semibold">Adresse</h3>
+              {/* ADRESSE */}
+              <div>
+                <h3 className="mb-5 text-3xl font-semibold">
+                  Adresse
+                </h3>
 
-        <div className="space-y-3 text-white/80">
-          <p>DEM-Planung</p>
-          <p>Kolpingstraße 27</p>
-          <p>66849 Landstuhl</p>
-        </div>
-      </div>
-    </div>
+                <div className="space-y-3 text-white/80">
+                  <p>DEM-Planung</p>
+                  <p>Kolpingstraße 27</p>
+                  <p>66849 Landstuhl</p>
+                </div>
+              </div>
+            </div>
 
-    <div className="border-t border-white/20 py-6 text-center text-sm text-white/60">
-      © 2026 DEM-Planung
-    </div>
-  </div>
-</footer>
+            <div className="border-t border-white/20 py-6 text-center text-sm text-white/60">
+              © 2026 DEM-Planung
+            </div>
+          </div>
+        </footer>
 
         <CookieBanner />
       </body>
