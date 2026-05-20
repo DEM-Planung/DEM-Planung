@@ -90,12 +90,20 @@ export default function RootLayout({
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/80">
-                  <Link href="/kontakt">Kontakt</Link>
-                  <span>|</span>
-                  <Link href="/datenschutz">Datenschutz</Link>
-                  <span>|</span>
-                  <Link href="/impressum">Impressum</Link>
-                </div>
+  <Link href="/kontakt">Kontakt</Link>
+  <span>|</span>
+  <Link href="/datenschutz">Datenschutz</Link>
+  <span>|</span>
+  <Link href="/impressum">Impressum</Link>
+  <span>|</span>
+  <button
+    type="button"
+    onClick={() => window.dispatchEvent(new Event("open-cookie-settings"))}
+    className="transition hover:text-white"
+  >
+    Cookie-Einstellungen
+  </button>
+</div>
               </div>
 
               {/* KONTAKT */}
@@ -124,28 +132,6 @@ export default function RootLayout({
                 </div>
               </div>
               <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/80">
-  <Link href="/kontakt">Kontakt</Link>
-
-  <span>|</span>
-
-  <Link href="/datenschutz">Datenschutz</Link>
-
-  <span>|</span>
-
-  <Link href="/impressum">Impressum</Link>
-
-  <span>|</span>
-
-  <button
-    type="button"
-    onClick={() =>
-      window.dispatchEvent(new Event("open-cookie-settings"))
-    }
-    className="transition hover:text-white"
-  >
-    Cookie-Einstellungen
-  </button>
-</div>
             </div>
 
             <div className="border-t border-white/20 py-6 text-center text-sm text-white/60">
