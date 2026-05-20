@@ -34,9 +34,9 @@ export default function DatenschutzPage() {
             </p>
 
             <p className="mt-4">
-              <strong className="text-[#061a33]">DEM-Planung GmbH</strong>
+              <strong className="text-[#061a33]">DEM-Planung</strong>
               <br />
-              Kanalstraße 2a
+              Kolpingstraße 27
               <br />
               66849 Landstuhl
             </p>
