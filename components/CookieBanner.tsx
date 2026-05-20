@@ -19,23 +19,24 @@ export default function CookieBanner() {
   });
 
   useEffect(() => {
-  const consent = localStorage.getItem("cookie-consent");
+    const openSettings = () => {
+      setShowBanner(true);
+      setShowSettings(true);
+    };
 
-  if (!consent) {
-    setShowBanner(true);
-  }
+    window.addEventListener("open-cookie-settings", openSettings);
 
-  const openSettings = () => {
-    setShowBanner(true);
-    setShowSettings(true);
-  };
+    const consent = localStorage.getItem("cookie-consent");
+    if (!consent) {
+      window.setTimeout(() => {
+        setShowBanner(true);
+      }, 0);
+    }
 
-  window.addEventListener("open-cookie-settings", openSettings);
-
-  return () => {
-    window.removeEventListener("open-cookie-settings", openSettings);
-  };
-}, []);
+    return () => {
+      window.removeEventListener("open-cookie-settings", openSettings);
+    };
+  }, []);
 
   const saveConsent = (newSettings: CookieSettings) => {
     localStorage.setItem("cookie-consent", JSON.stringify(newSettings));
@@ -78,8 +79,7 @@ export default function CookieBanner() {
             <p className="mb-5 text-sm leading-relaxed text-slate-600">
               Wir verwenden Cookies, um unsere Website technisch bereitzustellen
               und optional zu verbessern. Notwendige Cookies sind für den Betrieb
-              der Website erforderlich. Analyse- und Marketing-Cookies setzen wir
-              nur mit Ihrer Zustimmung ein.
+              der Website erforderlich.
             </p>
 
             <div className="flex flex-col gap-3 sm:flex-row sm:justify-end">
@@ -111,105 +111,45 @@ export default function CookieBanner() {
               Individuelle Cookie-Auswahl
             </h2>
 
-            <p className="mb-5 text-sm leading-relaxed text-slate-600">
-              Hier können Sie festlegen, welche Cookies Sie zulassen möchten.
-              Notwendige Cookies sind immer aktiv, da sie für den Betrieb der
-              Website erforderlich sind.
-            </p>
-
             <div className="space-y-4">
-              <div className="rounded-xl border border-slate-200 p-4">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-semibold text-[#061a33]">
-                      Notwendige Cookies
-                    </h3>
-                    <p className="mt-1 text-sm text-slate-600">
-                      Diese Cookies sind erforderlich, damit die Website korrekt
-                      funktioniert.
-                    </p>
-                  </div>
+              <label className="flex items-center justify-between rounded-xl border border-slate-200 p-4">
+                <span>Analyse-Cookies</span>
+                <input
+                  type="checkbox"
+                  checked={settings.analytics}
+                  onChange={(e) =>
+                    setSettings({ ...settings, analytics: e.target.checked })
+                  }
+                />
+              </label>
 
-                  <input
-                    type="checkbox"
-                    checked
-                    disabled
-                    className="mt-1 h-5 w-5"
-                  />
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 p-4">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-semibold text-[#061a33]">
-                      Analyse-Cookies
-                    </h3>
-                    <p className="mt-1 text-sm text-slate-600">
-                      Helfen uns zu verstehen, wie Besucher unsere Website
-                      nutzen, damit wir sie verbessern können.
-                    </p>
-                  </div>
-
-                  <input
-                    type="checkbox"
-                    checked={settings.analytics}
-                    onChange={(e) =>
-                      setSettings({
-                        ...settings,
-                        analytics: e.target.checked,
-                      })
-                    }
-                    className="mt-1 h-5 w-5"
-                  />
-                </div>
-              </div>
-
-              <div className="rounded-xl border border-slate-200 p-4">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <h3 className="font-semibold text-[#061a33]">
-                      Marketing-Cookies
-                    </h3>
-                    <p className="mt-1 text-sm text-slate-600">
-                      Können verwendet werden, um Inhalte oder Anzeigen
-                      relevanter zu gestalten.
-                    </p>
-                  </div>
-
-                  <input
-                    type="checkbox"
-                    checked={settings.marketing}
-                    onChange={(e) =>
-                      setSettings({
-                        ...settings,
-                        marketing: e.target.checked,
-                      })
-                    }
-                    className="mt-1 h-5 w-5"
-                  />
-                </div>
-              </div>
+              <label className="flex items-center justify-between rounded-xl border border-slate-200 p-4">
+                <span>Marketing-Cookies</span>
+                <input
+                  type="checkbox"
+                  checked={settings.marketing}
+                  onChange={(e) =>
+                    setSettings({ ...settings, marketing: e.target.checked })
+                  }
+                />
+              </label>
             </div>
 
             <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-end">
-              <button
-                onClick={rejectAll}
-                className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-medium text-[#061a33] transition hover:bg-slate-100"
-              >
+              <button onClick={rejectAll} className="rounded-lg border px-5 py-3">
                 Alle ablehnen
               </button>
 
               <button
                 onClick={saveSelected}
-                className="rounded-lg border border-slate-300 px-5 py-3 text-sm font-medium text-[#061a33] transition hover:bg-slate-100"
+                className="rounded-lg border px-5 py-3"
               >
                 Auswahl speichern
               </button>
 
               <button
                 onClick={acceptAll}
-                className="rounded-lg bg-[#061a33] px-5 py-3 text-sm font-medium text-white transition hover:bg-[#0b2a50]"
+                className="rounded-lg bg-[#061a33] px-5 py-3 text-white"
               >
                 Alle akzeptieren
               </button>
