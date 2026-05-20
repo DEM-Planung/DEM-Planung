@@ -35,6 +35,7 @@ export default function RootLayout({
   return (
     <html lang="de">
       <body className="overflow-x-hidden bg-white text-slate-900">
+        {/* HEADER */}
         <header className="border-b border-slate-200 bg-white">
           <div className="mx-auto flex h-20 w-full items-center justify-between px-4 md:h-30 md:px-6">
             <Link href="/">
@@ -64,28 +65,68 @@ export default function RootLayout({
           </div>
         </header>
 
+        {/* CONTENT */}
         {children}
 
-        <footer className="border-t border-slate-200 bg-white py-10">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-4 text-center md:flex-row md:px-6 md:text-left">
-            <div>
-              <p className="text-lg font-semibold text-[#061a33]">
-                DEM Planung
-              </p>
+        {/* FOOTER */}
+        <footer
+          className="relative overflow-hidden text-white"
+          style={{
+            backgroundImage: "url('/footer-bg.png')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="bg-black/60">
+            <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-3">
+              {/* LINKS */}
+              <div>
+                <h3 className="mb-5 text-3xl font-semibold">
+                  DEM-Planung
+                </h3>
 
-              <p className="mt-2 text-sm text-slate-600">
-                Architektur, Planung, Statik und Visualisierung.
-              </p>
+                <p className="max-w-sm text-white/80">
+                  Architektur, Planung, Statik und Visualisierung aus einer Hand.
+                </p>
+
+                <div className="mt-8 flex flex-wrap gap-3 text-sm text-white/80">
+                  <Link href="/kontakt">Kontakt</Link>
+                  <span>|</span>
+                  <Link href="/datenschutz">Datenschutz</Link>
+                  <span>|</span>
+                  <Link href="/impressum">Impressum</Link>
+                </div>
+              </div>
+
+              {/* KONTAKT */}
+              <div>
+                <h3 className="mb-5 text-3xl font-semibold">
+                  Kontakt
+                </h3>
+
+                <div className="space-y-3 text-white/80">
+                  <p>+49 176 724 611 07</p>
+                  <p>+49 176 637 814 72</p>
+                  <p>info@dem-planung.de</p>
+                </div>
+              </div>
+
+              {/* ADRESSE */}
+              <div>
+                <h3 className="mb-5 text-3xl font-semibold">
+                  Adresse
+                </h3>
+
+                <div className="space-y-3 text-white/80">
+                  <p>DEM-Planung</p>
+                  <p>Kolpingstraße 27</p>
+                  <p>66849 Landstuhl</p>
+                </div>
+              </div>
             </div>
 
-            <div className="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-600">
-              <Link href="/kontakt">Kontakt</Link>
-              <Link href="/datenschutz">Datenschutz</Link>
-              <Link href="/impressum">Impressum</Link>
-            </div>
-
-            <div className="text-sm text-slate-600">
-              © 2026 DEM Planung
+            <div className="border-t border-white/20 py-6 text-center text-sm text-white/60">
+              © 2026 DEM-Planung
             </div>
           </div>
         </footer>
