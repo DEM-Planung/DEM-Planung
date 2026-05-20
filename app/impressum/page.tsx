@@ -18,25 +18,17 @@ export default function ImpressumPage() {
 
             <p>
               <strong className="text-[#061a33]">
-                DEM-Planung GmbH
+                DEM Planung
               </strong>
+              <br />
+              Furkan Demirci
+              <br />
+              Mehmet Ali Demirci
               <br />
               Kanalstraße 2a
               <br />
               66849 Landstuhl
             </p>
-
-            <div className="mt-8">
-              <h3 className="text-xl font-bold text-[#061a33] mb-3">
-                Vertreten durch die Geschäftsführer
-              </h3>
-
-              <p>
-                Tim Breier
-                <br />
-                Müslüm Oymak
-              </p>
-            </div>
           </section>
 
           <section>
@@ -55,44 +47,18 @@ export default function ImpressumPage() {
 
           <section>
             <h2 className="text-3xl font-black text-[#061a33] mb-6">
-              Handelsregister
-            </h2>
-
-            <p>
-              Registergericht: Amtsgericht Zweibrücken
-              <br />
-              Registernummer: HRB XXXXX
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-black text-[#061a33] mb-6">
-              Umsatzsteuer-ID
-            </h2>
-
-            <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a
-              Umsatzsteuergesetz:
-            </p>
-
-            <p className="mt-4">
-              DE XXXXXXXX
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-black text-[#061a33] mb-6">
               EU-Streitschlichtung
             </h2>
 
             <p>
               Die Europäische Kommission stellt eine Plattform zur
-              Online-Streitbeilegung (OS) bereit:
+              Online-Streitbeilegung bereit:
             </p>
 
             <a
               href="https://ec.europa.eu/consumers/odr/"
               target="_blank"
+              rel="noopener noreferrer"
               className="text-[#061a33] font-semibold underline"
             >
               https://ec.europa.eu/consumers/odr/
@@ -110,8 +76,8 @@ export default function ImpressumPage() {
 
             <p>
               Wir sind nicht bereit oder verpflichtet, an
-              Streitbeilegungsverfahren vor einer
-              Verbraucherschlichtungsstelle teilzunehmen.
+              Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+              teilzunehmen.
             </p>
           </section>
 

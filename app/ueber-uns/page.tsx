@@ -15,7 +15,7 @@ const furkanData = {
       "01/2026 – 05/2026",
       "Selbstständig als freiberuflicher Bachelor of Arts",
     ],
-    ["Seit 05/2026", "Geschäftsführer DEM-Planung GmbH"],
+    ["Seit 05/2026", "Geschäftsführer DEM-Planung"],
   ],
 
   kompetenzen: [
@@ -49,7 +49,7 @@ const mehmetData = {
     ["02/2018 – 01/2021", "Angestellt bei Planungsbüro Bohnert"],
     ["02/2021 – 03/2025", "Geschäftsführer bei den KD-Ingenieuren"],
     ["03/2025 – 04/2026", "Geschäftsführer bei der DMA-Planung"],
-    ["Seit 05/2026", "Geschäftsführer bei der DEM-Planung GmbH"],
+    ["Seit 05/2026", "Geschäftsführer bei der DEM-Planung"],
   ],
 
   kompetenzen: [
@@ -90,12 +90,12 @@ export default function UeberUnsPage() {
             </p>
 
             <h1 className="mb-7 text-3xl font-black leading-tight md:mb-10 md:text-5xl">
-              DEM Planung GmbH
+              DEM Planung
             </h1>
 
             <div className="space-y-5 text-sm leading-7 text-slate-600 md:space-y-8 md:text-[17px] md:leading-9">
               <p>
-                Die DEM Planung GmbH wurde im Jahr 2026 gegründet
+                Die DEM Planung wurde im Jahr 2026 gegründet
                 und steht für moderne, wirtschaftliche und präzise
                 Planungslösungen im Bereich Architektur,
                 Tragwerksplanung und Projektentwicklung.
@@ -108,7 +108,7 @@ export default function UeberUnsPage() {
               </p>
 
               <p>
-                Heute begleitet die DEM Planung GmbH Projekte von der
+                Heute begleitet die DEM Planung Projekte von der
                 ersten Idee bis zur genehmigungsfähigen Umsetzung —
                 mit einem klaren Fokus auf Funktionalität,
                 Wirtschaftlichkeit und gestalterische Qualität.
