@@ -2,6 +2,7 @@ import "./globals.css";
 import Link from "next/link";
 import CookieBanner from "@/components/CookieBanner";
 import MobileMenu from "./MobileMenu";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 
 export const metadata = {
   metadataBase: new URL("https://www.dem-planung.de"),
@@ -95,6 +96,8 @@ export default function RootLayout({
                   <Link href="/datenschutz">Datenschutz</Link>
                   <span>|</span>
                   <Link href="/impressum">Impressum</Link>
+                  <span>|</span>
+                  <CookieSettingsButton />
                 </div>
               </div>
 
