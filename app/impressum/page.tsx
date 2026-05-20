@@ -25,7 +25,7 @@ export default function ImpressumPage() {
               <br />
               Mehmet Ali Demirci
               <br />
-              Kanalstraße 2a
+              Kolpingstraße 27
               <br />
               66849 Landstuhl
             </p>
