@@ -13,17 +13,22 @@ Danach http://localhost:3000 öffnen.
 
 ## Kontaktformular
 
-Das Formular unter `/kontakt` sendet über `app/api/kontakt/route.ts` eine E-Mail per Microsoft 365 (SMTP).
-Damit der Versand funktioniert, müssen in Vercel unter **Project → Settings → Environment Variables** gesetzt sein:
+Das Formular unter `/kontakt` sendet über `app/api/kontakt/route.ts` eine E-Mail aus dem Microsoft-365-Postfach.
 
-| Variable     | Wert                                                        |
-| ------------ | ----------------------------------------------------------- |
-| `SMTP_USER`  | Postfach, über das gesendet wird, z. B. `info@dem-planung.de` |
-| `SMTP_PASS`  | Passwort bzw. App-Kennwort dieses Postfachs                  |
-| `CONTACT_TO` | optional – Empfänger, Standard ist `SMTP_USER`              |
+**Empfohlen: Microsoft Graph (ohne Passwort, funktioniert mit MFA).** In Entra ID eine App-Registrierung anlegen,
+API-Berechtigung *Microsoft Graph → Anwendungsberechtigungen → Mail.Send* hinzufügen, Administratorzustimmung erteilen
+und einen geheimen Clientschlüssel erstellen. Dann in Vercel (Project → Settings → Environment Variables) setzen:
 
-Im Microsoft-365-Admin-Center muss für das Postfach „Authentifiziertes SMTP“ aktiviert sein.
-Ohne diese Variablen zeigt das Formular einen Hinweis mit E-Mail-Adresse und Telefonnummer.
+| Variable           | Wert                                                    |
+| ------------------ | ------------------------------------------------------- |
+| `MS_TENANT_ID`     | Verzeichnis-ID (Mandant) der App-Registrierung          |
+| `MS_CLIENT_ID`     | Anwendungs-ID (Client) der App-Registrierung            |
+| `MS_CLIENT_SECRET` | Wert des geheimen Clientschlüssels                      |
+| `MAIL_FROM`        | Absender-Postfach, z. B. `info@dem-planung.de`          |
+| `CONTACT_TO`       | optional – Empfänger, Standard ist `MAIL_FROM`          |
+
+**Fallback: SMTP** mit `SMTP_USER` / `SMTP_PASS` (nur ohne MFA, „Authentifiziertes SMTP“ muss aktiv sein).
+Sind die Graph-Variablen gesetzt, wird Graph verwendet. Ohne Konfiguration zeigt das Formular E-Mail und Telefon.
 
 ## Inhalte
 

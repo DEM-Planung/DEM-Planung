@@ -9,7 +9,7 @@ const SERVICES = ["Bauantrag & Planung", "Statik", "Bestandsaufnahme", "Flächen
 
 const ERRORS: Record<string, string> = {
   invalid: "Bitte füllen Sie Name, E-Mail und Ihr Vorhaben aus und bestätigen Sie die Datenschutzerklärung.",
-  "too-large": "Die Anhänge sind zu groß (max. 4 MB insgesamt). Größere Dateien schicken Sie uns gern per E-Mail.",
+  "too-large": "Die Anhänge sind zu groß (max. 3 MB insgesamt). Größere Dateien schicken Sie uns gern per E-Mail.",
   "file-type": "Bitte nur PDF-, Bild- oder DWG-Dateien anhängen.",
 };
 
@@ -113,7 +113,7 @@ export default function ContactForm() {
       </label>
 
       <label className="flex flex-col gap-2 md:col-span-2">
-        <span className={lbl}>Unterlagen anhängen (optional, max. 4 MB)</span>
+        <span className={lbl}>Unterlagen anhängen (optional, max. 3 MB)</span>
         <span className="flex flex-wrap items-center gap-3 border border-dashed border-ink bg-paper p-4">
           <input name="dateien" type="file" multiple accept=".pdf,.jpg,.jpeg,.png,.webp,.heic,.dwg,.dxf" className="text-sm" />
           <span className="font-mono text-xs text-muted">PDF, JPG, PNG, DWG · Fotos, Lageplan, Bestandspläne</span>
