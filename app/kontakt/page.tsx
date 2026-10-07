@@ -13,7 +13,7 @@ export default function KontaktPage() {
   return (
     <>
       <PageHero
-        num="05"
+        num="06"
         label="Kontakt"
         title="Projekt anfragen"
         intro="Beschreiben Sie kurz Ihr Vorhaben – gern mit Fotos, Lageplan oder Bestandsplänen. Wir melden uns mit einer ersten Einschätzung zu Verfahren und Leistungsumfang."

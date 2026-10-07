@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function ImpressumPage() {
   return (
     <LegalPage
-      code="R1"
+      code="07"
       title="Impressum"
       sections={[
         {

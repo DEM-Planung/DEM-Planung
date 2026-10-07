@@ -14,7 +14,7 @@ export default function AblaufPage() {
     <>
       <section className="bg-raster border-b border-ink">
         <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-4 py-16 md:px-8 md:py-[72px]">
-          <SectionLabel num="03">Ablauf · LPH 1–4 + Statik</SectionLabel>
+          <SectionLabel num="04">Ablauf · LPH 1–4 + Statik</SectionLabel>
           <h1 className="display text-[clamp(36px,7.4vw,112px)]">
             In fünf Schritten
             <br />

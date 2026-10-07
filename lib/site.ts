@@ -9,16 +9,16 @@ export const SITE = {
 };
 
 export const NAV = [
-  { href: "/leistungen", label: "Leistungen", sheet: "Blatt L · Leistungen" },
-  { href: "/projekte", label: "Projekte", sheet: "Blatt 02 · Projekte" },
-  { href: "/ablauf", label: "Ablauf", sheet: "Blatt 03 · Ablauf" },
-  { href: "/ueber-uns", label: "Über uns", sheet: "Blatt 04 · Über uns" },
-  { href: "/kontakt", label: "Kontakt", sheet: "Blatt 05 · Kontakt" },
+  { href: "/leistungen", label: "Leistungen", sheet: "Blatt 02 · Leistungen" },
+  { href: "/projekte", label: "Projekte", sheet: "Blatt 03 · Projekte" },
+  { href: "/ablauf", label: "Ablauf", sheet: "Blatt 04 · Ablauf" },
+  { href: "/ueber-uns", label: "Über uns", sheet: "Blatt 05 · Über uns" },
+  { href: "/kontakt", label: "Kontakt", sheet: "Blatt 06 · Kontakt" },
 ];
 
 export const SHEETS: Record<string, string> = {
   "/": "Blatt 01 · Startseite",
-  "/impressum": "Blatt R1 · Impressum",
-  "/datenschutz": "Blatt R2 · Datenschutz",
+  "/impressum": "Blatt 07 · Impressum",
+  "/datenschutz": "Blatt 08 · Datenschutz",
   ...Object.fromEntries(NAV.map((n) => [n.href, n.sheet])),
 };

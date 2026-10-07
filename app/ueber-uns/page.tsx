@@ -62,7 +62,7 @@ export default function UeberUnsPage() {
       <section className="bg-raster border-b border-ink">
         <div className="mx-auto flex max-w-[1280px] flex-wrap items-end gap-12 px-4 py-16 md:px-8 md:py-[72px]">
           <div className="flex min-w-0 flex-[1_1_520px] flex-col gap-7">
-            <SectionLabel num="04">Über uns</SectionLabel>
+            <SectionLabel num="05">Über uns</SectionLabel>
             <h1 className="display text-[clamp(52px,7.4vw,112px)]">
               Gestaltung
               <br />

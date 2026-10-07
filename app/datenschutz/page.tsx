@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function DatenschutzPage() {
   return (
     <LegalPage
-      code="R2"
+      code="08"
       title={<>Datenschutz&shy;erklärung</>}
       sections={[
         {

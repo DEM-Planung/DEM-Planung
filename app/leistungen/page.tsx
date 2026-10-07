@@ -13,7 +13,7 @@ export default function LeistungenPage() {
   return (
     <>
       <PageHero
-        num="L"
+        num="02"
         label="Leistungen"
         title="Was wir planen"
         intro="Fünf Leistungsbereiche, ein Büro: Sie können uns für das komplette Paket von der Bestandsaufnahme bis zum Bauantrag beauftragen – oder für einzelne Bausteine wie Statik, Flächenberechnung oder Renderings."

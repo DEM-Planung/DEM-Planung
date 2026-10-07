@@ -15,7 +15,7 @@ export default function ProjektePage() {
     <>
       <section className="bg-raster">
         <div className="mx-auto flex max-w-[1280px] flex-col gap-7 px-4 pb-8 pt-16 md:px-8 md:pt-[72px]">
-          <SectionLabel num="02">Referenzen</SectionLabel>
+          <SectionLabel num="03">Referenzen</SectionLabel>
           <div className="flex flex-wrap items-end justify-between gap-6">
             <h1 className="display text-[clamp(56px,8vw,120px)]">
               Projekte<span className="text-blue">.</span>
