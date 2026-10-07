@@ -1,11 +1,7 @@
-export default function sitemap() {
-  return [
-    { url: "https://www.dem-planung.de", lastModified: new Date() },
-    { url: "https://www.dem-planung.de/leistungen", lastModified: new Date() },
-    { url: "https://www.dem-planung.de/projekte", lastModified: new Date() },
-    { url: "https://www.dem-planung.de/ueber-uns", lastModified: new Date() },
-    { url: "https://www.dem-planung.de/kontakt", lastModified: new Date() },
-    { url: "https://www.dem-planung.de/impressum", lastModified: new Date() },
-    { url: "https://www.dem-planung.de/datenschutz", lastModified: new Date() },
-  ];
+import type { MetadataRoute } from "next";
+
+const PAGES = ["", "/leistungen", "/projekte", "/ablauf", "/ueber-uns", "/kontakt", "/impressum", "/datenschutz"];
+
+export default function sitemap(): MetadataRoute.Sitemap {
+  return PAGES.map((p) => ({ url: `https://www.dem-planung.de${p}`, lastModified: new Date() }));
 }

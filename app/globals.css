@@ -1,19 +1,93 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-paper: #f3f1ec;
+  --color-sand: #ece9e2;
+  --color-card: #e4e0d6;
+  --color-stone: #cfccc4;
+  --color-line: #c9c5bc;
+  --color-ink: #16181a;
+  --color-ink-2: #33312d;
+  --color-muted: #5e5b55;
+  --color-blue: #1f4fa3;
+  --color-sky: #8fb0e8;
+  --color-night: #3a3d41;
+
+  --font-display: "Archivo Variable", "Arial Narrow", sans-serif;
+  --font-sans: "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+}
+
+a:hover {
+  color: var(--color-blue);
+}
+
+/* Planblatt-Raster */
+.bg-raster {
+  background-image:
+    linear-gradient(to right, rgba(22, 24, 26, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(22, 24, 26, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.bg-raster-light {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.09) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* Typografie-Bausteine */
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  text-transform: uppercase;
+  font-stretch: 70%;
+  font-variation-settings: "wdth" 70;
+  line-height: 0.9;
+}
+.display-75 {
+  font-stretch: 75%;
+  font-variation-settings: "wdth" 75;
+}
+.display-80 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-stretch: 80%;
+  font-variation-settings: "wdth" 80;
+}
+.label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.label-sm {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 24px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
 }

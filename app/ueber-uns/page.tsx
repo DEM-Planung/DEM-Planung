@@ -1,444 +1,159 @@
-"use client";
+import type { Metadata } from "next";
+import { CtaBand, SectionLabel } from "@/components/ui";
+import { SITE } from "@/lib/site";
 
-import { useState } from "react";
-
-type Person = "mehmet" | "furkan";
-
-const furkanData = {
-  name: "Furkan Demirci",
-  timeline: [
-    [
-      "2020 – 2025",
-      "Studium Bachelor of Arts Architektur an der Hochschule Kaiserslautern",
-    ],
-    [
-      "01/2026 – 05/2026",
-      "Selbstständig als freiberuflicher Bachelor of Arts",
-    ],
-    ["Seit 05/2026", "Geschäftsführer DEM-Planung"],
-  ],
-
-  kompetenzen: [
-    "Entwurf und Entwicklung moderner Wohn- und Quartierskonzepte",
-    "Fotorealistische Architekturvisualisierung für Vermarktung und Planung",
-    "Digitale Bestandsaufnahme und präzise Gebäudeerfassung",
-    "Flächenberechnungen und Kostenermittlungen nach aktuellen Normen",
-    "Optimierung von Grundrissen unter funktionalen und wirtschaftlichen Aspekten",
-    "Professionelle Projektaufbereitung für Bauherren, Investoren und Behörden",
-  ],
-
-  tools: [
-    "Vectorworks",
-    "ArchiCAD",
-    "Twinmotion",
-    "Lumion",
-    "Enscape",
-    "Photoshop",
-    "InDesign",
-  ],
-
-  email: "f.demirci@dem-planung.de",
-  phone: "+49 176 724 611 07",
+export const metadata: Metadata = {
+  title: "Über uns",
+  description:
+    "DEM Planung aus Landstuhl: Architektur und Bauingenieurwesen aus einer Hand – Mehmet Ali Demirci und Furkan Demirci.",
+  alternates: { canonical: "/ueber-uns" },
 };
 
-const mehmetData = {
-  name: "Mehmet Ali Demirci",
+const VALUES = [
+  { code: "W–01", title: "Funktionalität", text: "Grundrisse, die im Alltag funktionieren – durchdacht vom Stellplatz bis zum Abstellraum." },
+  { code: "W–02", title: "Wirtschaftlichkeit", text: "Tragwerk und Flächen wirtschaftlich bemessen – damit sich Ihr Projekt rechnet." },
+  { code: "W–03", title: "Gestalterische Qualität", text: "Architektur mit Anspruch, die wir schon im Entwurf als Rendering sichtbar machen." },
+];
 
-  timeline: [
-    ["2016 – 2020", "Studium Bauingenieurwesen an der HTW des Saarlandes"],
-    ["02/2018 – 01/2021", "Angestellt bei Planungsbüro Bohnert"],
-    ["02/2021 – 03/2025", "Geschäftsführer bei den KD-Ingenieuren"],
-    ["03/2025 – 04/2026", "Geschäftsführer bei der DMA-Planung"],
-    ["Seit 05/2026", "Geschäftsführer bei der DEM-Planung"],
-  ],
-
-  kompetenzen: [
-    "Architekturplanung und Entwicklung funktionaler Gebäudekonzepte",
-    "Tragwerksplanung und statische Berechnungen im Hochbau",
-    "Erstellung prüffähiger Statiknachweise",
-    "Genehmigungsplanung und Bauantragsunterlagen",
-    "Entwurfs- und Ausführungsgrundrisse",
-    "Kostenberechnung und wirtschaftliche Projektbewertung",
-    "Fachbauleitung, Vor-Ort-Betreuung und statische Abnahmen",
-  ],
-
-  qualifikationen: [
-    "Eingetragen in der Ingenieurkammer des Saarlandes",
-  ],
-
-  email: "ma.demirci@dem-planung.de",
-  phone: "+49 176 637 814 72",
-};
+const TEAM = [
+  {
+    code: "T–01",
+    role: "Bauingenieurwesen · Tragwerk",
+    name: "Mehmet Ali Demirci",
+    focus: "Architektur · Tragwerksplanung · Baukosten",
+    img: "/team/mehmet.jpg",
+    cv: [
+      { t: "2016 – 2020", d: "Studium Bauingenieurwesen, HTW des Saarlandes" },
+      { t: "02/2018 – 01/2021", d: "Planungsbüro Bohnert" },
+      { t: "02/2021 – 03/2025", d: "Geschäftsführer, KD-Ingenieure" },
+      { t: "03/2025 – 04/2026", d: "Geschäftsführer, DMA-Planung" },
+      { t: "seit 05/2026", d: "DEM Planung" },
+    ],
+    skills: ["Tragwerksplanung", "Prüffähige Statik", "Genehmigungsplanung", "Kostenberechnung", "Fachbauleitung", "Statische Abnahmen"],
+    quals: [
+      "Ingenieurkammer des Saarlandes – bauvorlageberechtigt seit 10/2024",
+      "Eingetragener Tragwerksplaner seit 10/2024",
+      "Bachelor of Engineering – Bauingenieurwesen",
+    ],
+    mail: "ma.demirci@dem-planung.de",
+    tel: SITE.phoneMehmet,
+  },
+  {
+    code: "T–02",
+    role: "Architektur · Visualisierung",
+    name: "Furkan Demirci",
+    focus: "Architektur · Visualisierung · Bestandsaufnahme",
+    img: "/team/furkan.jpg",
+    cv: [
+      { t: "03/2025", d: "Abschluss Bachelor of Arts Architektur" },
+      { t: "05 – 07/2025", d: "Angestellt in einem Planungsbüro" },
+      { t: "seit 01/2026", d: "Freiberuflich tätig – DEM Planung" },
+    ],
+    skills: ["Entwurf", "Genehmigungsplanung", "Bestandsaufnahme", "Wohnflächen nach WoFlV", "Renderings", "Bauantragsunterlagen"],
+    quals: ["Bachelor of Arts – Architektur"],
+    mail: "f.demirci@dem-planung.de",
+    tel: SITE.phoneFurkan,
+  },
+];
 
 export default function UeberUnsPage() {
-  const [activePerson, setActivePerson] =
-    useState<Person>("mehmet");
-
   return (
-    <main className="min-h-screen overflow-x-hidden bg-[#f8f8f8] text-[#061a33]">
-      <section className="mx-auto max-w-7xl px-5 py-12 md:px-6 md:py-28">
-        <div className="grid gap-10 lg:grid-cols-2 lg:gap-20">
-          <img
-            src="/buro.png"
-            alt="DEM Planung Büro"
-            className="h-[320px] w-full rounded-2xl object-cover object-right shadow-xl md:h-[650px] md:rounded-[32px] md:shadow-2xl"
-          />
-
-          <div className="max-w-xl">
-            <p className="mb-4 text-xs uppercase tracking-[0.3em] text-slate-500 md:text-sm md:tracking-[0.35em]">
-              Unsere Geschichte
-            </p>
-
-            <h1 className="mb-7 text-3xl font-black leading-tight md:mb-10 md:text-5xl">
-              DEM Planung
+    <>
+      <section className="bg-raster border-b border-ink">
+        <div className="mx-auto flex max-w-[1280px] flex-wrap items-end gap-12 px-4 py-16 md:px-8 md:py-[72px]">
+          <div className="flex min-w-0 flex-[1_1_520px] flex-col gap-7">
+            <SectionLabel num="04">Über uns</SectionLabel>
+            <h1 className="display text-[clamp(52px,7.4vw,112px)]">
+              Gestaltung
+              <br />
+              trifft
+              <br />
+              Tragwerk<span className="text-blue">.</span>
             </h1>
-
-            <div className="space-y-5 text-sm leading-7 text-slate-600 md:space-y-8 md:text-[17px] md:leading-9">
-              <p>
-                Die DEM Planung wurde im Jahr 2026 gegründet
-                und steht für moderne, wirtschaftliche und präzise
-                Planungslösungen im Bereich Architektur,
-                Tragwerksplanung und Projektentwicklung.
-              </p>
-
-              <p>
-                Bereits vor der gemeinsamen Gründung sammelten die
-                verantwortlichen Planer mehrjährige praktische
-                Erfahrung in unterschiedlichsten Bauvorhaben.
-              </p>
-
-              <p>
-                Heute begleitet die DEM Planung Projekte von der
-                ersten Idee bis zur genehmigungsfähigen Umsetzung —
-                mit einem klaren Fokus auf Funktionalität,
-                Wirtschaftlichkeit und gestalterische Qualität.
-              </p>
-
-              <p>
-                Durch die Verbindung aus Architektur,
-                Bestandsaufnahme, Tragwerksplanung und
-                Visualisierung entstehen ganzheitliche Lösungen aus
-                einer Hand.
-              </p>
-            </div>
-
-            <div className="mt-9 border-l-4 border-[#061a33] pl-5 md:mt-14 md:pl-6">
-              <p className="text-lg font-semibold leading-relaxed md:text-2xl">
-                Unser Anspruch ist es, Gestaltung, Präzision und
-                technische Qualität in Einklang zu bringen.
-              </p>
-            </div>
           </div>
-        </div>
-      </section>
-
-      <section className="px-5 pb-14 md:px-6 md:pb-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-10 text-center md:mb-16">
-            <p className="mb-3 text-xs uppercase tracking-[0.3em] text-slate-500 md:text-sm md:tracking-[0.35em]">
-              Team
+          <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-4 text-ink-2">
+            <p className="text-[19px] text-ink">
+              DEM Planung wurde 2026 gegründet und steht für moderne, wirtschaftliche und präzise Planung in Architektur,
+              Tragwerksplanung und Projektentwicklung.
             </p>
-
-            <h2 className="text-3xl font-black md:text-5xl">
-              Geschäftsführer
-            </h2>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2">
-            <div>
-              <TeamCard
-                active={activePerson === "mehmet"}
-                onClick={() => setActivePerson("mehmet")}
-                image="/mehmet.jpeg"
-                name="Mehmet Ali Demirci"
-                role="Architektur · Tragwerksplanung · Baukosten"
-              />
-
-              {activePerson === "mehmet" && (
-                <div className="mt-8 md:hidden">
-                  <DetailBox {...mehmetData} />
-                </div>
-              )}
-            </div>
-
-            <div>
-              <TeamCard
-                active={activePerson === "furkan"}
-                onClick={() => setActivePerson("furkan")}
-                image="/furkan.jpg"
-                name="Furkan Demirci"
-                role="Architektur · Visualisierung · Bestandsaufnahme"
-              />
-
-              {activePerson === "furkan" && (
-                <div className="mt-8 md:hidden">
-                  <DetailBox {...furkanData} />
-                </div>
-              )}
-            </div>
-          </div>
-
-          <div className="mt-12 hidden md:block">
-            {activePerson === "mehmet" && (
-              <DetailBox {...mehmetData} />
-            )}
-
-            {activePerson === "furkan" && (
-              <DetailBox {...furkanData} />
-            )}
+            <p>
+              Schon vor der gemeinsamen Gründung haben wir mehrjährige praktische Erfahrung in unterschiedlichsten
+              Bauvorhaben gesammelt. Heute begleiten wir Projekte von der ersten Idee bis zur genehmigungsfähigen Umsetzung.
+            </p>
+            <p>
+              Weil Architektur, Bestandsaufnahme, Tragwerksplanung und Visualisierung im selben Büro entstehen, greifen
+              Entwurf und Nachweise von Anfang an ineinander.
+            </p>
           </div>
         </div>
       </section>
-    </main>
-  );
-}
 
-function TeamCard({
-  active,
-  onClick,
-  image,
-  name,
-  role,
-}: {
-  active: boolean;
-  onClick: () => void;
-  image: string;
-  name: string;
-  role: string;
-}) {
-  return (
-    <button
-      onClick={onClick}
-      className={`relative w-full overflow-hidden rounded-2xl text-left transition-all duration-300 md:rounded-3xl ${
-        active
-          ? "scale-[1.01] shadow-2xl ring-4 ring-[#061a33] md:ring-8"
-          : "shadow-xl hover:scale-[1.01] hover:shadow-2xl"
-      }`}
-    >
-      <img
-        src={image}
-        alt={name}
-        className="h-[420px] w-full object-cover md:h-[620px]"
-      />
-
-      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
-
-      <div className="absolute bottom-0 left-0 p-5 text-white md:p-8">
-        <p className="mb-2 text-[10px] uppercase tracking-[0.25em] text-white/70 md:mb-3 md:text-xs md:tracking-[0.3em]">
-          Geschäftsführer
-        </p>
-
-        <h3 className="mb-2 text-2xl font-black md:text-4xl">
-          {name}
-        </h3>
-
-        <p className="text-sm text-white/80 md:text-lg">
-          {role}
-        </p>
-      </div>
-    </button>
-  );
-}
-
-function DetailBox({
-  name,
-  timeline,
-  kompetenzen,
-  qualifikationen,
-  tools,
-  email,
-  phone,
-}: {
-  name: string;
-  timeline: string[][];
-  kompetenzen: string[];
-  qualifikationen?: string[];
-  tools?: string[];
-  email: string;
-  phone: string;
-}) {
-  return (
-    <div className="grid max-h-none gap-10 overflow-visible rounded-2xl border border-slate-100 bg-white p-5 shadow-xl md:rounded-[32px] md:p-12 lg:max-h-[620px] lg:grid-cols-[1.5fr_0.8fr] lg:gap-14 lg:overflow-y-auto">
-      <div>
-        <p className="mb-3 text-[11px] uppercase tracking-[0.25em] text-[#061a33]/60 md:text-[13px]">
-          Geschäftsführer
-        </p>
-
-        <h2 className="mb-8 text-3xl font-black text-[#061a33] md:mb-14 md:text-5xl">
-          {name}
-        </h2>
-
-        <div className="mb-10 space-y-6 md:mb-16 md:space-y-8">
-          {timeline.map(([date, text]) => (
-            <TimelineItem key={date} date={date} text={text} />
+      <section className="border-b border-ink">
+        <div className="mx-auto grid max-w-[1280px] grid-cols-1 px-4 md:grid-cols-3 md:px-8">
+          {VALUES.map((v, i) => (
+            <div key={v.code} className={`flex flex-col gap-3 py-10 md:px-8 ${i === 0 ? "md:pl-0" : ""} ${i === 2 ? "md:pr-0" : "border-b border-line md:border-b-0 md:border-r"}`}>
+              <span className="font-mono text-xs text-blue">{v.code}</span>
+              <span className="display-80 text-[28px]">{v.title}</span>
+              <span className="text-ink-2">{v.text}</span>
+            </div>
           ))}
         </div>
+      </section>
 
-        <InfoList title="Kompetenzen" items={kompetenzen} />
-
-        {qualifikationen && name === "Mehmet Ali Demirci" && (
-          <div className="mt-10 md:mt-14">
-            <h3 className="mb-5 text-xl font-black uppercase md:mb-8 md:text-2xl">
-              Qualifikationen
-            </h3>
-
-            <div className="space-y-5 text-slate-700">
-              <div className="flex gap-4">
-                <div className="h-8 w-[3px] rounded-full bg-[#061a33]" />
-
-                <p className="text-sm leading-7 md:text-base md:leading-8">
-                  Eingetragen in der Ingenieurkammer des
-                  Saarlandes
-                </p>
-              </div>
-
-              <div className="ml-8 flex gap-4">
-                <span className="text-xl text-[#061a33]">
-                  ↳
-                </span>
-
-                <div>
-                  <p className="text-sm leading-7 md:text-base md:leading-8">
-                    Bauvorlagenberechtigt
-                  </p>
-
-                  <p className="text-xs text-slate-500 md:text-sm">
-                    seit 10/2024
-                  </p>
+      <section className="border-b border-ink">
+        <div className="mx-auto flex max-w-[1280px] flex-col gap-12 px-4 py-24 md:px-8">
+          <div className="flex flex-col gap-4">
+            <SectionLabel num="Team">Architektur &amp; Ingenieurwesen</SectionLabel>
+            <h2 className="display display-75 text-[clamp(40px,5vw,64px)] leading-[0.95]">Die Planer</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+            {TEAM.map((m) => (
+              <article key={m.code} className="flex flex-col border border-ink">
+                <div className="relative aspect-[4/3] overflow-hidden border-b border-ink bg-card">
+                  <img src={m.img} alt={m.name} className="absolute inset-0 block h-full w-full object-cover object-[center_25%] grayscale contrast-[1.05]" loading="lazy" />
+                  <span className="absolute left-0 top-0 border-b border-r border-ink bg-paper px-3 py-2 font-mono text-xs">{m.code}</span>
                 </div>
-              </div>
-
-              <div className="ml-8 flex gap-4">
-                <span className="text-xl text-[#061a33]">
-                  ↳
-                </span>
-
-                <div>
-                  <p className="text-sm leading-7 md:text-base md:leading-8">
-                    Eingetragen als Tragwerksplaner
-                  </p>
-
-                  <p className="text-xs text-slate-500 md:text-sm">
-                    seit 10/2024
-                  </p>
+                <div className="flex flex-col gap-7 p-6 md:p-8">
+                  <div className="flex flex-col gap-2">
+                    <span className="label-sm text-blue">{m.role}</span>
+                    <span className="display text-[40px] leading-none [font-stretch:78%]">{m.name}</span>
+                    <span className="text-ink-2">{m.focus}</span>
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="label-sm border-b-2 border-ink pb-2 text-muted">Werdegang</span>
+                    {m.cv.map((c) => (
+                      <div key={c.t + c.d} className="grid grid-cols-[130px_minmax(0,1fr)] gap-4 border-b border-line py-2.5 sm:grid-cols-[150px_minmax(0,1fr)]">
+                        <span className="font-mono text-[13px]">{c.t}</span>
+                        <span>{c.d}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex flex-col gap-2.5">
+                    <span className="label-sm text-muted">Kompetenzen</span>
+                    <div className="flex flex-wrap gap-2">
+                      {m.skills.map((s) => (
+                        <span key={s} className="border border-ink px-2.5 py-1.5 text-sm">{s}</span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex flex-col gap-1.5 bg-sand p-4">
+                    <span className="label-sm text-muted">Qualifikation</span>
+                    {m.quals.map((q) => (
+                      <span key={q} className="font-mono text-[13px]">↳ {q}</span>
+                    ))}
+                  </div>
+                  <div className="flex flex-wrap gap-x-6 gap-y-2 border-t border-ink pt-4 font-mono text-[13px]">
+                    <a href={`mailto:${m.mail}`} className="py-1.5 no-underline">{m.mail}</a>
+                    <a href={m.tel.href} className="py-1.5 no-underline">{m.tel.label}</a>
+                  </div>
                 </div>
-              </div>
-
-              <div className="flex gap-4">
-                <div className="h-8 w-[3px] rounded-full bg-[#061a33]" />
-
-                <p className="text-sm leading-7 md:text-base md:leading-8">
-                  Bachelor of Engineering –
-                  Bauingenieurwesen
-                </p>
-              </div>
-            </div>
+              </article>
+            ))}
           </div>
-        )}
-
-        {tools && (
-          <div className="mt-10 md:mt-14">
-            <h3 className="mb-5 text-xl font-black uppercase md:mb-8 md:text-2xl">
-              Software · Tools
-            </h3>
-
-            <div className="flex flex-wrap gap-2 md:gap-3">
-              {tools.map((tool) => (
-                <span
-                  key={tool}
-                  className="rounded-full bg-[#061a33]/10 px-3 py-2 text-xs font-semibold text-[#061a33] md:px-4 md:text-sm"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
-
-      <ContactBox email={email} phone={phone} />
-    </div>
-  );
-}
-
-function TimelineItem({
-  date,
-  text,
-}: {
-  date: string;
-  text: string;
-}) {
-  return (
-    <div className="grid gap-3 md:grid-cols-[180px_1fr] md:gap-6">
-      <div className="text-sm font-bold text-[#061a33] md:text-base">
-        {date}
-      </div>
-
-      <div className="border-l-2 border-[#061a33] pl-5 text-sm leading-7 text-slate-700 md:pl-6 md:text-base md:leading-8">
-        {text}
-      </div>
-    </div>
-  );
-}
-
-function InfoList({
-  title,
-  items,
-}: {
-  title: string;
-  items: string[];
-}) {
-  return (
-    <div>
-      <h3 className="mb-5 text-xl font-black uppercase md:mb-8 md:text-2xl">
-        {title}
-      </h3>
-
-      <div className="space-y-3 md:space-y-4">
-        {items.map((item) => (
-          <div key={item} className="flex gap-3 md:gap-4">
-            <div className="mt-1 h-auto min-h-6 w-[3px] shrink-0 rounded-full bg-[#061a33]" />
-
-            <p className="text-sm leading-7 text-slate-700 md:text-base md:leading-8">
-              {item}
-            </p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function ContactBox({
-  email,
-  phone,
-}: {
-  email: string;
-  phone: string;
-}) {
-  return (
-    <div className="border-t border-slate-200 pt-8 lg:border-l lg:border-t-0 lg:pl-12 lg:pt-0">
-      <div className="space-y-8 lg:sticky lg:top-0 lg:pt-2">
-        <div>
-          <p className="mb-3 text-xs uppercase tracking-[0.25em] text-slate-500 md:text-sm">
-            Kontakt
-          </p>
-
-          <p className="break-all text-base font-semibold text-[#061a33] md:text-xl">
-            {email}
-          </p>
         </div>
+      </section>
 
-        <div>
-          <p className="mb-3 text-xs uppercase tracking-[0.25em] text-slate-500 md:text-sm">
-            Telefon
-          </p>
-
-          <p className="text-base font-semibold text-[#061a33] md:text-xl">
-            {phone}
-          </p>
-        </div>
-      </div>
-    </div>
+      <CtaBand title="Lernen wir uns kennen." />
+    </>
   );
 }

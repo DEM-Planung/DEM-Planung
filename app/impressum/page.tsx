@@ -1,140 +1,132 @@
+import type { Metadata } from "next";
+import LegalPage from "@/components/LegalPage";
+import { SITE } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Impressum",
+  description: "Impressum von DEM Planung – Furkan Demirci, Kolpingstraße 27, 66849 Landstuhl.",
+  alternates: { canonical: "/impressum" },
+};
+
 export default function ImpressumPage() {
   return (
-    <main className="bg-[#f8f8f8] text-[#061a33]">
-      <section className="max-w-5xl mx-auto px-6 py-24">
-        <p className="text-sm uppercase tracking-[0.35em] text-slate-500 mb-4">
-          Rechtliches
-        </p>
-
-        <h1 className="text-5xl md:text-6xl font-black mb-16">
-          Impressum
-        </h1>
-
-        <div className="bg-white rounded-3xl shadow-sm border border-slate-200 p-10 md:p-14 space-y-14 text-slate-600 leading-8">
-          <section>
-            <h2 className="text-3xl font-black text-[#061a33] mb-6">
-              Angaben gemäß § 5 TMG
-            </h2>
-
-            <p>
-              <strong className="text-[#061a33]">
-                DEM Planung
-              </strong>
-              <br />
+    <LegalPage
+      code="R1"
+      title="Impressum"
+      sections={[
+        {
+          id: "anbieter",
+          toc: "Anbieter",
+          title: "Angaben gemäß § 5 DDG",
+          body: (
+            <p className="m-0">
               Furkan Demirci
               <br />
-              Mehmet Ali Demirci
+              DEM PLANUNG – Planungsbüro (freiberuflich tätig)
               <br />
-              Kolpingstraße 27
+              {SITE.street}
               <br />
-              66849 Landstuhl
+              {SITE.city}
             </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-black text-[#061a33] mb-6">
-              Kontakt
-            </h2>
-
-            <p>
-              Telefon: +49 176 724 611 07
+          ),
+        },
+        {
+          id: "kontakt",
+          toc: "Kontakt",
+          title: "Kontakt",
+          body: (
+            <p className="m-0">
+              Telefon: <a href={SITE.phoneFurkan.href}>{SITE.phoneFurkan.label}</a>
               <br />
-              Telefon: +49 176 637 814 72
+              E-Mail: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+            </p>
+          ),
+        },
+        {
+          id: "steuer",
+          toc: "Steuer",
+          title: "Steuer",
+          body: <p className="m-0">Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: DE459181387</p>,
+        },
+        {
+          id: "beruf",
+          toc: "Berufsrecht",
+          title: "Berufsrechtliche Angaben",
+          body: (
+            <>
+              <p className="m-0">
+                <strong>Furkan Demirci</strong>
+                <br />
+                Akademischer Grad: Bachelor of Arts (Architektur), verliehen in der Bundesrepublik Deutschland
+                <br />
+                Keine Kammermitgliedschaft.
+              </p>
+              <p className="m-0">
+                <strong>Kooperationspartner: Mehmet Ali Demirci</strong>
+                <br />
+                Ingenieur (B.Eng. Bauingenieurwesen), Mitglied der Ingenieurkammer des Saarlandes, Franz-Josef-Röder-Straße
+                9, 66119 Saarbrücken, <a href="https://www.ing-saarland.de">www.ing-saarland.de</a>
+                <br />
+                Eingetragen in die Liste der Bauvorlageberechtigten sowie als Tragwerksplaner. Bauvorlageberechtigte
+                Leistungen und Tragwerksplanung werden durch ihn erbracht.
+              </p>
+              <p className="m-0">
+                Es gelten die berufsrechtlichen Regelungen des Saarländischen Architekten- und Ingenieurkammergesetzes
+                (SAIG) sowie die Satzungen der Ingenieurkammer des Saarlandes, einsehbar unter{" "}
+                <a href="https://www.ing-saarland.de">www.ing-saarland.de</a>.
+              </p>
+            </>
+          ),
+        },
+        {
+          id: "redaktion",
+          toc: "Inhaltlich verantwortlich",
+          title: "Inhaltlich verantwortlich",
+          body: (
+            <p className="m-0">
+              Verantwortlich nach § 18 Abs. 2 MStV:
               <br />
-              E-Mail: info@dem-planung.de
+              Furkan Demirci, {SITE.street}, {SITE.city}
             </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-black text-[#061a33] mb-6">
-              EU-Streitschlichtung
-            </h2>
-
-            <p>
-              Die Europäische Kommission stellt eine Plattform zur
-              Online-Streitbeilegung bereit:
-            </p>
-
-            <a
-              href="https://ec.europa.eu/consumers/odr/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#061a33] font-semibold underline"
-            >
-              https://ec.europa.eu/consumers/odr/
-            </a>
-
-            <p className="mt-4">
-              Unsere E-Mail-Adresse finden Sie oben im Impressum.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-black text-[#061a33] mb-6">
-              Verbraucherstreitbeilegung
-            </h2>
-
-            <p>
-              Wir sind nicht bereit oder verpflichtet, an
-              Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
+          ),
+        },
+        {
+          id: "streit",
+          toc: "Streitbeilegung",
+          title: "Verbraucherstreitbeilegung",
+          body: (
+            <p className="m-0">
+              Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
               teilzunehmen.
             </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-black text-[#061a33] mb-6">
-              Haftung für Inhalte
-            </h2>
-
-            <p>
-              Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene
-              Inhalte auf diesen Seiten nach den allgemeinen Gesetzen
-              verantwortlich.
-            </p>
-
-            <p className="mt-4">
-              Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
-              verpflichtet, übermittelte oder gespeicherte fremde Informationen
-              zu überwachen oder nach Umständen zu forschen, die auf eine
-              rechtswidrige Tätigkeit hinweisen.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-black text-[#061a33] mb-6">
-              Haftung für Links
-            </h2>
-
-            <p>
-              Unser Angebot enthält Links zu externen Websites Dritter, auf
-              deren Inhalte wir keinen Einfluss haben. Deshalb können wir für
-              diese fremden Inhalte auch keine Gewähr übernehmen.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-3xl font-black text-[#061a33] mb-6">
-              Urheberrecht
-            </h2>
-
-            <p>
-              Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
-              diesen Seiten unterliegen dem deutschen Urheberrecht.
-            </p>
-
-            <p className="mt-4">
-              Downloads und Kopien dieser Seite sind nur für den privaten,
-              nicht kommerziellen Gebrauch gestattet.
-            </p>
-          </section>
-
-          <div className="pt-10 border-t border-slate-200">
-            <p className="text-sm text-slate-500">
-              Stand: Mai 2026
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
+          ),
+        },
+        {
+          id: "haftung",
+          toc: "Haftung & Urheberrecht",
+          title: "Haftung & Urheberrecht",
+          body: (
+            <>
+              <p className="m-0">
+                <strong>Haftung für Inhalte.</strong> Die Inhalte dieser Website wurden mit größter Sorgfalt erstellt. Für
+                die Richtigkeit, Vollständigkeit und Aktualität der Inhalte übernehmen wir jedoch keine Gewähr. Als
+                Diensteanbieter sind wir nach den allgemeinen Gesetzen für eigene Inhalte verantwortlich.
+              </p>
+              <p className="m-0">
+                <strong>Haftung für Links.</strong> Unsere Website enthält gegebenenfalls Links zu externen Websites
+                Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der
+                jeweilige Anbieter verantwortlich. Bei Bekanntwerden von Rechtsverletzungen entfernen wir derartige Links
+                umgehend.
+              </p>
+              <p className="m-0">
+                <strong>Urheberrecht.</strong> Pläne, Renderings, Fotos und Texte auf dieser Website sind
+                urheberrechtlich geschützt und Eigentum von Furkan Demirci (DEM PLANUNG) bzw. der jeweiligen Bauherren.
+                Jede Verwendung außerhalb der Grenzen des Urheberrechts bedarf unserer vorherigen schriftlichen Zustimmung.
+              </p>
+            </>
+          ),
+        },
+      ]}
+    />
   );
 }
