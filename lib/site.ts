@@ -4,7 +4,7 @@ export const SITE = {
   street: "Kolpingstraße 27",
   city: "66849 Landstuhl",
   email: "info@dem-planung.de",
-  phoneFurkan: { label: "+49 151 681 534 75", href: "tel:+4915168153475" },
+  phoneFurkan: { label: "+49 151 724 611 07", href: "tel:+4915172461107" },
   phoneMehmet: { label: "+49 176 637 814 72", href: "tel:+4917663781472" },
 };
 
