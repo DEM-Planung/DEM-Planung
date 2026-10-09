@@ -5,7 +5,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { SITE } from "@/lib/site";
 
-const SERVICES = ["Bauantrag & Planung", "Statik", "Bestandsaufnahme", "Flächenberechnung", "Renderings", "Nutzungsänderung", "Sonstiges"];
+const SERVICES = ["Bauantrag & Planung", "Bauvoranfrage", "Statik", "Bestandsaufnahme", "Flächenberechnung", "Renderings", "Nutzungsänderung", "Sonstiges"];
 
 const ERRORS: Record<string, string> = {
   invalid: "Bitte füllen Sie Name, E-Mail und Ihr Vorhaben aus und bestätigen Sie die Datenschutzerklärung.",
