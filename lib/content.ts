@@ -109,6 +109,32 @@ export const SERVICES: Service[] = [
 
 export type GalleryImage = { src: string; cap: string; photo?: boolean; wide?: boolean };
 
+export type PressItem = {
+  source: string;
+  title: string;
+  date: string;
+  dateIso: string;
+  author?: string;
+  url: string;
+  summary: string;
+  project?: string;
+};
+
+/** Presseberichte – Inhalte nur verlinken und in eigenen Worten zusammenfassen, keine Artikeltexte oder Zeitungsfotos übernehmen. */
+export const PRESS: PressItem[] = [
+  {
+    source: "Saarbrücker Zeitung",
+    title: "Paukenschlag in Völklingen – Investor plant 114 Wohnungen im Saarstahl-Doppelhochhaus",
+    date: "08.05.2026",
+    dateIso: "2026-05-08",
+    author: "Marco Reuther",
+    url: "https://www.saarbruecker-zeitung.de/saarland/saarbruecken/voelklingen/voelklingen-roechlingbank-und-casino-investor-will-riesen-leerstand-in-der-rathausstrasse-beseitigen_aid-147952127",
+    summary:
+      "Die Saarbrücker Zeitung berichtet über die Pläne für das seit über 20 Jahren leerstehende Saarstahl-Doppelhochhaus mit ehemaligem Casino und Röchlingbank. Gemeinsam mit den Investoren haben wir das Projekt im Ortsrat Völklingen vorgestellt – die Visualisierungen im Artikel stammen von DEM Planung.",
+    project: "rathausplatz-voelklingen",
+  },
+];
+
 export type Project = {
   num: string;
   slug: string;

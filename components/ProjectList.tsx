@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import { PROJECTS, type GalleryImage, type Project } from "@/lib/content";
+import { PRESS, PROJECTS, type GalleryImage, type Project } from "@/lib/content";
 
 const CATS = ["Alle", "Quartiersentwicklung", "Wohnungsbau", "Bestandssanierung"] as const;
 
@@ -54,6 +54,19 @@ export default function ProjectList() {
                   </div>
                 ))}
               </dl>
+              {PRESS.filter((pr) => pr.project === p.slug).map((pr) => (
+                <a
+                  key={pr.url}
+                  href={pr.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex flex-col gap-2 border border-ink bg-sand p-4 text-ink no-underline hover:text-ink"
+                >
+                  <span className="label-sm text-blue">In der Presse · {pr.source} · {pr.date}</span>
+                  <span className="display-80 text-lg leading-snug">„{pr.title}“</span>
+                  <span className="label-sm text-muted">Artikel lesen ↗</span>
+                </a>
+              ))}
             </div>
 
             <div className="flex min-w-0 flex-[2_1_560px] flex-col gap-4">

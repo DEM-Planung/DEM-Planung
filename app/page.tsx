@@ -1,7 +1,7 @@
 import Link from "next/link";
 import DisciplineToggle from "@/components/DisciplineToggle";
 import { SectionLabel } from "@/components/ui";
-import { PROJECTS, SERVICES, STEPS } from "@/lib/content";
+import { PRESS, PROJECTS, SERVICES, STEPS } from "@/lib/content";
 import { SITE } from "@/lib/site";
 
 const FACTS = [
@@ -191,6 +191,35 @@ export default function Home() {
               <figcaption className="label-sm text-muted">Nachher · Rendering DEM Planung</figcaption>
             </figure>
           </div>
+        </div>
+      </section>
+
+      {/* Presse */}
+      <section id="presse" className="border-b border-ink">
+        <div className="mx-auto flex max-w-[1280px] flex-col gap-8 px-4 py-16 md:px-8">
+          <SectionLabel num="Presse">Berichte über unsere Projekte</SectionLabel>
+          {PRESS.map((pr) => (
+            <a
+              key={pr.url}
+              href={pr.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="grid grid-cols-1 gap-6 border-t-2 border-ink pt-6 text-ink no-underline hover:text-ink md:grid-cols-[minmax(0,1fr)_minmax(0,1.4fr)_auto] md:items-start"
+            >
+              <div className="flex flex-col gap-2">
+                <span className="display-80 text-[26px] leading-[1.1]">{pr.source}</span>
+                <span className="label-sm text-muted">
+                  <time dateTime={pr.dateIso}>{pr.date}</time>
+                  {pr.author ? ` · ${pr.author}` : ""}
+                </span>
+              </div>
+              <div className="flex flex-col gap-3">
+                <span className="display-80 text-xl leading-snug">„{pr.title}“</span>
+                <p className="m-0 text-ink-2">{pr.summary}</p>
+              </div>
+              <span className="label self-start border-b border-ink py-2 text-[13px]">Artikel lesen ↗</span>
+            </a>
+          ))}
         </div>
       </section>
 
