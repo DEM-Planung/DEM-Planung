@@ -21,4 +21,10 @@ export const SHEETS: Record<string, string> = {
   "/impressum": "Blatt 07 · Impressum",
   "/datenschutz": "Blatt 08 · Datenschutz",
   ...Object.fromEntries(NAV.map((n) => [n.href, n.sheet])),
+  "/leistungen/bauantrag": "Blatt 02.1 · Bauantrag",
+  "/leistungen/statik": "Blatt 02.2 · Statik",
+  "/leistungen/wohnflaechenberechnung": "Blatt 02.3 · Wohnflächenberechnung",
+  "/leistungen/nutzungsaenderung": "Blatt 02.4 · Nutzungsänderung",
+  "/leistungen/bestandsaufnahme": "Blatt 02.5 · Bestandsaufnahme",
+  "/leistungen/visualisierung": "Blatt 02.6 · Visualisierung",
 };

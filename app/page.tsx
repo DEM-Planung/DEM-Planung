@@ -6,7 +6,7 @@ import { SITE } from "@/lib/site";
 
 const FACTS = [
   { label: "Leistungsbild", value: "LPH 1–4 + Statik" },
-  { label: "Qualifikation", value: "Bauvorlageberechtigt" },
+  { label: "Bauvorlageberechtigt", value: "über Partnerbüro" },
   { label: "Tätigkeitsgebiet", value: "RLP · Saarland · BaWü · Hessen" },
   { label: "Gegründet", value: "2026 · Landstuhl" },
 ];
@@ -86,7 +86,7 @@ export default function Home() {
               </Link>
             </div>
             <p className="max-w-[420px] text-ink-2">
-              Entwurf, Tragwerk und Nachweise entstehen im selben Büro – das spart Abstimmungsschleifen und sorgt für
+              Entwurf, Tragwerk und Nachweise entstehen eng abgestimmt mit unserem Partnerbüro – das spart Abstimmungsschleifen und sorgt für
               prüffähige Unterlagen beim ersten Einreichen.
             </p>
           </div>
@@ -234,8 +234,8 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
             {[
-              { img: "/team/mehmet.jpg", role: "Bauingenieurwesen · Tragwerk", name: "Mehmet Ali Demirci", focus: "Architektur · Tragwerksplanung · Baukosten", q: ["↳ Bauvorlageberechtigt, Ingenieurkammer Saarland", "↳ Tragwerksplaner · B.Eng. Bauingenieurwesen"] },
-              { img: "/team/furkan.jpg", role: "Architektur · Visualisierung", name: "Furkan Demirci", focus: "Architektur · Visualisierung · Bestandsaufnahme", q: ["↳ B.A. Architektur", "↳ Entwurf, Genehmigungsplanung, Renderings"] },
+              { img: "/team/furkan.jpg", role: "Inhaber · Architektur & Visualisierung", name: "Furkan Demirci", focus: "Architektur · Visualisierung · Bestandsaufnahme", q: ["↳ B.A. Architektur", "↳ Entwurf, Genehmigungsplanung, Renderings"] },
+              { img: "/team/mehmet.jpg", role: "Partnerbüro · DMA Planung", name: "Mehmet Ali Demirci", focus: "Tragwerksplanung · Bauvorlagen · Baukosten", q: ["↳ Bauvorlageberechtigt, Ingenieurkammer Saarland", "↳ Tragwerksplaner · B.Eng. Bauingenieurwesen"] },
             ].map((m) => (
               <Link key={m.name} href="/ueber-uns" className="flex flex-wrap border border-ink text-ink no-underline">
                 <div className="relative min-h-[260px] flex-[1_1_200px] overflow-hidden border-ink bg-card sm:border-r">

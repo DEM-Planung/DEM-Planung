@@ -30,7 +30,7 @@ export default function SiteHeader() {
 
           <div className="hidden items-center gap-7 text-[15px] font-medium lg:flex">
             {NAV.map((item) => {
-              const active = pathname === item.href;
+              const active = pathname === item.href || pathname.startsWith(item.href + "/");
               return (
                 <Link
                   key={item.href}

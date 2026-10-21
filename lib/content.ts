@@ -8,11 +8,13 @@ export type Service = {
   img: string;
   cap: string;
   plan?: boolean;
+  href: string;
 };
 
 export const SERVICES: Service[] = [
   {
     pos: "L–01",
+    href: "/leistungen/bauantrag",
     title: "Bauantrag & Planung",
     tag: "Architektur",
     text: "Ganzheitliche Planung von der ersten Idee bis zur Genehmigung – Entwurf, Genehmigungsplanung und vollständige Bauvorlagen.",
@@ -37,6 +39,7 @@ export const SERVICES: Service[] = [
   },
   {
     pos: "L–02",
+    href: "/leistungen/statik",
     title: "Statik",
     tag: "Ingenieurwesen",
     text: "Tragwerksplanung mit Präzision und Wirtschaftlichkeit – prüffähige statische Nachweise im Hochbau.",
@@ -53,6 +56,7 @@ export const SERVICES: Service[] = [
   },
   {
     pos: "L–03",
+    href: "/leistungen/bestandsaufnahme",
     title: "Bestandsaufnahme",
     tag: "Architektur",
     text: "Digitale und analoge Erfassung des Bestands als sichere Grundlage für Umbau, Nutzungsänderung und Verkauf.",
@@ -68,6 +72,7 @@ export const SERVICES: Service[] = [
   },
   {
     pos: "L–04",
+    href: "/leistungen/wohnflaechenberechnung",
     title: "Flächen & Kosten",
     tag: "Ingenieurwesen",
     text: "Transparente Flächenermittlung und Kostenschätzung – nachvollziehbar mit Maßketten dokumentiert.",
@@ -85,6 +90,7 @@ export const SERVICES: Service[] = [
   },
   {
     pos: "L–05",
+    href: "/leistungen/visualisierung",
     title: "Renderings",
     tag: "Architektur",
     text: "Realistische Visualisierungen für Präsentation, Vermarktung und die Abstimmung mit Bauherren und Gremien.",
@@ -246,6 +252,6 @@ export const STEPS = [
 export const FAQ = [
   { q: "Brauche ich für mein Vorhaben überhaupt einen Bauantrag?", a: "Das hängt von Vorhaben und Bundesland ab – manches ist verfahrensfrei, anderes braucht ein vereinfachtes oder reguläres Verfahren. Genau das klären wir im Erstgespräch." },
   { q: "Wie lange dauert es bis zur Genehmigung?", a: "Die Bearbeitungszeit liegt beim Bauamt und ist je nach Behörde unterschiedlich. Vollständige, prüffähige Unterlagen vermeiden Nachforderungen und sparen so am meisten Zeit." },
-  { q: "Können Sie auch nur die Statik übernehmen?", a: "Ja. Tragwerksplanung, Bestandsaufnahme, Flächenberechnung oder Renderings bieten wir auch als Einzelleistung an." },
+  { q: "Können Sie auch nur die Statik übernehmen?", a: "Ja. Tragwerksplanung, Bestandsaufnahme, Flächenberechnung oder Renderings bieten wir auch als Einzelleistung an. Die Statik übernimmt unser Partnerbüro DMA Planung." },
   { q: "In welchen Regionen sind Sie tätig?", a: "Von unserem Büro in Landstuhl aus planen wir in Rheinland-Pfalz, im Saarland, in Baden-Württemberg und in Hessen." },
 ];

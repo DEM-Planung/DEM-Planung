@@ -9,6 +9,8 @@ import type { Metadata } from "next";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { CookieProvider } from "@/components/CookieConsent";
+import JsonLd from "@/components/JsonLd";
+import { businessSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.dem-planung.de"),
@@ -28,12 +30,19 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+  openGraph: {
+    siteName: "DEM Planung",
+    locale: "de_DE",
+    type: "website",
+    images: ["/projekte/rathausplatz/frontansicht.jpg"],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="de">
       <body className="overflow-x-hidden bg-paper text-ink antialiased">
+        <JsonLd data={businessSchema} />
         <CookieProvider>
           <SiteHeader />
           <main>{children}</main>

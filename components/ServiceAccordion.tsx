@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { SERVICES } from "@/lib/content";
 
@@ -54,6 +55,9 @@ export default function ServiceAccordion() {
                   {s.cases.map((c) => (
                     <span key={c} className="border-b border-line py-1.5">— {c}</span>
                   ))}
+                  <Link href={s.href} className="mt-3 self-start border border-ink px-4 py-2.5 font-mono text-[13px] uppercase tracking-[0.06em] text-ink no-underline hover:text-blue">
+                    Mehr zu {s.title} →
+                  </Link>
                 </div>
                 <figure className="m-0 flex min-w-0 flex-[1_1_300px] flex-col gap-2">
                   {s.plan ? (

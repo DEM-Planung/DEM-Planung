@@ -5,7 +5,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Über uns",
   description:
-    "DEM Planung aus Landstuhl: Architektur und Bauingenieurwesen aus einer Hand – Mehmet Ali Demirci und Furkan Demirci.",
+    "DEM Planung aus Landstuhl: Furkan Demirci (B.A. Architektur) und Partnerbüro DMA Planung mit Mehmet Ali Demirci (B.Eng., bauvorlageberechtigt, Tragwerksplaner).",
   alternates: { canonical: "/ueber-uns" },
 };
 
@@ -18,16 +18,31 @@ const VALUES = [
 const TEAM = [
   {
     code: "T–01",
-    role: "Bauingenieurwesen · Tragwerk",
+    role: "Inhaber · Architektur & Visualisierung",
+    name: "Furkan Demirci",
+    focus: "Architektur · Visualisierung · Bestandsaufnahme",
+    img: "/team/furkan.jpg",
+    cv: [
+      { t: "03/2025", d: "Abschluss Bachelor of Arts Architektur" },
+      { t: "05 – 07/2025", d: "Angestellt in einem Planungsbüro" },
+      { t: "seit 01/2026", d: "Inhaber DEM Planung, Landstuhl" },
+    ],
+    skills: ["Entwurf", "Genehmigungsplanung", "Bestandsaufnahme", "Wohnflächen nach WoFlV", "Renderings", "Bauantragsunterlagen"],
+    quals: ["Bachelor of Arts – Architektur"],
+    mail: "f.demirci@dem-planung.de",
+    tel: SITE.phoneFurkan,
+  },
+  {
+    code: "T–02",
+    role: "Partnerbüro · DMA Planung",
     name: "Mehmet Ali Demirci",
-    focus: "Architektur · Tragwerksplanung · Baukosten",
+    focus: "Tragwerksplanung · Bauvorlagen · Baukosten",
     img: "/team/mehmet.jpg",
     cv: [
       { t: "2016 – 2020", d: "Studium Bauingenieurwesen, HTW des Saarlandes" },
       { t: "02/2018 – 01/2021", d: "Planungsbüro Bohnert" },
       { t: "02/2021 – 03/2025", d: "Geschäftsführer, KD-Ingenieure" },
-      { t: "03/2025 – 04/2026", d: "Geschäftsführer, DMA-Planung" },
-      { t: "seit 05/2026", d: "DEM Planung" },
+      { t: "seit 03/2025", d: "Inhaber DMA Planung, Kaiserslautern – Partnerbüro von DEM Planung" },
     ],
     skills: ["Tragwerksplanung", "Prüffähige Statik", "Genehmigungsplanung", "Kostenberechnung", "Fachbauleitung", "Statische Abnahmen"],
     quals: [
@@ -37,22 +52,6 @@ const TEAM = [
     ],
     mail: "ma.demirci@dem-planung.de",
     tel: SITE.phoneMehmet,
-  },
-  {
-    code: "T–02",
-    role: "Architektur · Visualisierung",
-    name: "Furkan Demirci",
-    focus: "Architektur · Visualisierung · Bestandsaufnahme",
-    img: "/team/furkan.jpg",
-    cv: [
-      { t: "03/2025", d: "Abschluss Bachelor of Arts Architektur" },
-      { t: "05 – 07/2025", d: "Angestellt in einem Planungsbüro" },
-      { t: "seit 01/2026", d: "Freiberuflich tätig – DEM Planung" },
-    ],
-    skills: ["Entwurf", "Genehmigungsplanung", "Bestandsaufnahme", "Wohnflächen nach WoFlV", "Renderings", "Bauantragsunterlagen"],
-    quals: ["Bachelor of Arts – Architektur"],
-    mail: "f.demirci@dem-planung.de",
-    tel: SITE.phoneFurkan,
   },
 ];
 
@@ -73,16 +72,17 @@ export default function UeberUnsPage() {
           </div>
           <div className="flex min-w-0 flex-[1_1_420px] flex-col gap-4 text-ink-2">
             <p className="text-[19px] text-ink">
-              DEM Planung wurde 2026 gegründet und steht für moderne, wirtschaftliche und präzise Planung in Architektur,
-              Tragwerksplanung und Projektentwicklung.
+              DEM Planung wurde 2026 in Landstuhl gegründet und steht für moderne, wirtschaftliche und präzise Planung in
+              Architektur, Bestandsaufnahme und Visualisierung.
             </p>
             <p>
-              Schon vor der gemeinsamen Gründung haben wir mehrjährige praktische Erfahrung in unterschiedlichsten
-              Bauvorhaben gesammelt. Heute begleiten wir Projekte von der ersten Idee bis zur genehmigungsfähigen Umsetzung.
+              Für Tragwerksplanung und bauvorlageberechtigte Leistungen arbeiten wir fest mit unserem Partnerbüro DMA Planung
+              von Mehmet Ali Demirci zusammen. So begleiten wir Projekte von der ersten Idee bis zur genehmigungsfähigen
+              Umsetzung.
             </p>
             <p>
-              Weil Architektur, Bestandsaufnahme, Tragwerksplanung und Visualisierung im selben Büro entstehen, greifen
-              Entwurf und Nachweise von Anfang an ineinander.
+              Weil Architektur, Bestandsaufnahme, Tragwerksplanung und Visualisierung eng abgestimmt entstehen, greifen
+              Entwurf und Nachweise von Anfang an ineinander – mit einem Ansprechpartner für Sie.
             </p>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function UeberUnsPage() {
       <section className="border-b border-ink">
         <div className="mx-auto flex max-w-[1280px] flex-col gap-12 px-4 py-24 md:px-8">
           <div className="flex flex-col gap-4">
-            <SectionLabel num="Team">Architektur &amp; Ingenieurwesen</SectionLabel>
+            <SectionLabel num="Team">Büro &amp; Partnerbüro</SectionLabel>
             <h2 className="display display-75 text-[clamp(40px,5vw,64px)] leading-[0.95]">Die Planer</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">

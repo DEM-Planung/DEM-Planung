@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { CookieSettingsLink } from "./CookieConsent";
 import { SITE } from "@/lib/site";
+import { LEISTUNGEN } from "@/lib/leistungen";
 
 function Cell({ label, children, className = "" }: { label: string; children: React.ReactNode; className?: string }) {
   return (
@@ -52,6 +53,13 @@ export default function SiteFooter() {
             <CookieSettingsLink />
           </div>
         </div>
+        <nav aria-label="Leistungen" className="flex flex-wrap gap-x-5 gap-y-2 pt-4 font-mono text-xs text-muted">
+          {LEISTUNGEN.map((l) => (
+            <Link key={l.slug} href={`/leistungen/${l.slug}`} className="no-underline hover:text-blue">
+              {l.nav}
+            </Link>
+          ))}
+        </nav>
       </div>
     </footer>
   );
